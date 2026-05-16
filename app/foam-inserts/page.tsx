@@ -1,0 +1,605 @@
+"use client";
+
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { FinalCtaBanner } from "@/components/home/final-cta-banner";
+import { TopBar } from "@/components/layout/top-bar";
+import { SolutionsTabs } from "@/components/solutions-tabs";
+import { fadeUpVariants, heroMediaVariants, motionTimings } from "@/lib/motion";
+import useEmblaCarousel from "embla-carousel-react";
+import { motion, useReducedMotion } from "framer-motion";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Boxes,
+  ClipboardCheck,
+  Grid3X3,
+  Layers3,
+  PackageCheck,
+  ShieldCheck,
+  Sparkles,
+  Wrench
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
+import styles from "./foam-inserts-page.module.css";
+
+const navItems = [
+  { label: "Why Choose", href: "#why-choose" },
+  { label: "Overview", href: "#overview" },
+  { label: "Foam Solutions", href: "#foam-solutions" },
+  { label: "Applications", href: "#applications" },
+  { label: "Foam Types", href: "#foam-types" }
+];
+
+const whyFeatures = [
+  {
+    title: "Custom fit",
+    text: "Fabricatable to fit any cavity such as a corrugated or plastic box, hard case, or ATA case.",
+    icon: Grid3X3
+  },
+  {
+    title: "Shock & abrasion protection",
+    text: "Superior shock and vibration protection, or abrasion resistance.",
+    icon: ShieldCheck
+  },
+  {
+    title: "Organized storage",
+    text: "Can attractively organize multiple parts in a case or crate.",
+    icon: Boxes
+  },
+  {
+    title: "Specialty foams",
+    text: "Specialty foams such as Ethafoam, cross-linked, or beaded polyethylene help protect even class A surfaces.",
+    icon: Layers3
+  }
+];
+
+const overviewBlocks = [
+  {
+    title: "Precision packaging for safe transit",
+    text: "We develop smart foam solutions that cushion and protect fragile, high-value equipment and products during transit and handling.",
+    icon: PackageCheck
+  },
+  {
+    title: "Engineered for your product",
+    text: "Our team understands how foam properties interact with product weight, geometry, fragility, and sensitivity.",
+    icon: ClipboardCheck
+  },
+  {
+    title: "In-house design & manufacturing",
+    text: "Foam solutions are designed, cut, and assembled using precision-focused fabrication workflows.",
+    icon: Wrench
+  }
+];
+
+const solutionTabs = [
+  {
+    title: "Protective Packaging",
+    panelTitle: "Protective Packaging Solutions",
+    image: "/images/foam-solution-protective-packaging.webp",
+    imageAlt: "Close view of red-handled tools protected in custom black foam",
+    text: "Custom foam inserts are designed to cushion, protect, and secure products during transit, storage, and repeated handling.",
+    checks: [
+      "Shock & vibration absorption",
+      "Prevents movement and damage",
+      "Tailored to your product",
+      "Improves unboxing experience"
+    ]
+  },
+  {
+    title: "Equipment Cases",
+    panelTitle: "Case-Ready Foam Interiors",
+    image: "/images/foam-solution-equipment-cases.webp",
+    imageAlt: "Tools arranged in custom cut black foam on a work surface",
+    text: "Hard cases, field kits, tool cases, and transport cases can be fitted with clean foam interiors that improve protection and usability.",
+    checks: [
+      "Clean cavity layouts",
+      "Fast equipment identification",
+      "Repeatable storage",
+      "Presentation-ready interiors"
+    ]
+  },
+  {
+    title: "Custom Shapes",
+    panelTitle: "Precision-Cut Foam Shapes",
+    image: "/images/foam-solution-custom-shapes.webp",
+    imageAlt: "Electronic meters organized in a custom hard case foam insert",
+    text: "From simple pads to complex layered assemblies, custom cut foam shapes are built around the geometry and handling risk of each product.",
+    checks: [
+      "Profile cut cavities",
+      "Layered assemblies",
+      "Die-cut pads and blocks",
+      "Production-ready repeatability"
+    ]
+  },
+  {
+    title: "Storage & Organization",
+    panelTitle: "Foam Layouts for Organized Storage",
+    image: "/images/foam-solution-storage-organization.webp",
+    imageAlt: "Foam tray with organized vial and tube cavities",
+    text: "Organized foam layouts make tools, instruments, kits, and parts easier to inventory, retrieve, and repack after each use.",
+    checks: [
+      "Visual part control",
+      "Cleaner kit management",
+      "Reduced handling mistakes",
+      "Better warehouse presentation"
+    ]
+  },
+  {
+    title: "High Value Protection",
+    panelTitle: "Protection for Sensitive Products",
+    image: "/images/foam-solution-high-value-protection.webp",
+    imageAlt: "Stacked colorful precision-cut foam inserts",
+    text: "Specialty foams support delicate, sensitive, or high-value products where surface finish, static, impact, and cleanliness matter.",
+    checks: [
+      "Class A surface protection",
+      "ESD-sensitive packaging",
+      "Abrasion resistance",
+      "Fragility-based cushioning"
+    ]
+  }
+];
+
+const applications = [
+  {
+    title: "Foam caps",
+    image:
+      "https://images.pexels.com/photos/18372333/pexels-photo-18372333.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1200",
+    imageAlt: "White protective foam packaging material used for cushioning"
+  },
+  {
+    title: "Foam assemblies",
+    image:
+      "https://images.pexels.com/photos/9607010/pexels-photo-9607010.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1200",
+    imageAlt: "Hands organizing tools in a protective case"
+  },
+  {
+    title: "Plain pads",
+    image:
+      "https://images.pexels.com/photos/5025503/pexels-photo-5025503.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1200",
+    imageAlt: "Stacked cardboard boxes ready for protective shipping"
+  },
+  {
+    title: "Case inserts",
+    image:
+      "https://images.pexels.com/photos/30562711/pexels-photo-30562711.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1200",
+    imageAlt: "Professional gear hard case with organized compartments"
+  },
+  {
+    title: "Die-cut pads",
+    image:
+      "https://images.pexels.com/photos/8985918/pexels-photo-8985918.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1200",
+    imageAlt: "Detailed portable tool case with organized hand tools"
+  },
+  {
+    title: "Bars and pads for blocking",
+    image:
+      "https://images.pexels.com/photos/11881295/pexels-photo-11881295.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1200",
+    imageAlt: "Stacked industrial materials arranged in an orderly pattern"
+  },
+  {
+    title: "Floater base / shock pallet",
+    image:
+      "https://images.pexels.com/photos/16955622/pexels-photo-16955622.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1200",
+    imageAlt: "Palletized packaging stacks inside an industrial warehouse"
+  },
+  {
+    title: "Cushioning systems",
+    image:
+      "https://images.pexels.com/photos/5156696/pexels-photo-5156696.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1200",
+    imageAlt: "Warehouse shelving filled with boxes and packaging"
+  },
+  {
+    title: "Floater skids and feet",
+    image:
+      "https://images.pexels.com/photos/4483860/pexels-photo-4483860.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1200",
+    imageAlt: "Warehouse workers organizing packaging and stocked shelves"
+  },
+  {
+    title: "ESD foam packaging",
+    image:
+      "https://images.pexels.com/photos/8986044/pexels-photo-8986044.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1200",
+    imageAlt: "Organized industrial tool case with protected metal tools"
+  }
+];
+
+const foamTypes = [
+  {
+    title: "Polyethylene",
+    text: "Closed-cell, non-absorbent foam with excellent protection and chemical resistance.",
+    image: "/images/foam-type-polyethylene.webp"
+  },
+  {
+    title: "Crosslinked Polyethylene",
+    text: "Higher durability and tear resistance with excellent shock absorption.",
+    image: "/images/foam-type-crosslinked-polyethylene.webp"
+  },
+  {
+    title: "Polyurethane",
+    text: "Flexible foam with high impact absorption and superior cushioning performance.",
+    image: "/images/foam-type-polyurethane.webp"
+  },
+  {
+    title: "Expanded PE & PP",
+    text: "Lightweight and versatile foams ideal for wide packaging applications.",
+    image: "/images/foam-type-expanded-pe-pp.webp"
+  },
+  {
+    title: "Electrostatic Discharge Foam",
+    text: "Protects sensitive electronics from static damage with anti-static properties.",
+    image: "/images/foam-type-esd.webp"
+  }
+];
+
+function Reveal({
+  children,
+  className = ""
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <motion.div
+      initial={reduceMotion ? false : "hidden"}
+      whileInView="visible"
+      viewport={{ once: true, margin: "-80px" }}
+      variants={fadeUpVariants}
+      transition={motionTimings.fadeUp}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function SectionHeader({
+  eyebrow,
+  title,
+  text
+}: {
+  eyebrow: string;
+  title: string;
+  text?: string;
+}) {
+  return (
+    <div className="max-w-3xl">
+      <p className="eyebrow">{eyebrow}</p>
+      <h2 className="h2 mt-3">{title}</h2>
+      {text ? <p className="body mt-4">{text}</p> : null}
+    </div>
+  );
+}
+
+export default function FoamInsertsPage() {
+  const [activeNav, setActiveNav] = useState(navItems[0].href);
+  const [isFoamTypesPaused, setIsFoamTypesPaused] = useState(false);
+  const [applicationsRef, applicationsApi] = useEmblaCarousel({
+    align: "start",
+    loop: true
+  });
+  const [foamTypesRef, foamTypesApi] = useEmblaCarousel({
+    align: "start",
+    loop: true
+  });
+  const reduceMotion = useReducedMotion();
+
+  const scrollApplicationsPrev = useCallback(
+    () => applicationsApi?.scrollPrev(),
+    [applicationsApi]
+  );
+  const scrollApplicationsNext = useCallback(
+    () => applicationsApi?.scrollNext(),
+    [applicationsApi]
+  );
+  const scrollFoamTypesPrev = useCallback(
+    () => foamTypesApi?.scrollPrev(),
+    [foamTypesApi]
+  );
+  const scrollFoamTypesNext = useCallback(
+    () => foamTypesApi?.scrollNext(),
+    [foamTypesApi]
+  );
+
+  useEffect(() => {
+    if (!foamTypesApi || reduceMotion || isFoamTypesPaused) {
+      return;
+    }
+
+    const autoplay = window.setInterval(() => {
+      foamTypesApi.scrollNext();
+    }, 4200);
+
+    return () => window.clearInterval(autoplay);
+  }, [foamTypesApi, isFoamTypesPaused, reduceMotion]);
+
+  return (
+    <>
+      <TopBar />
+      <Header />
+      <main id="foam-inserts" className={styles.page}>
+        <section className={styles.hero} aria-labelledby="foam-hero-title">
+          <motion.div
+            className={styles.heroImage}
+            initial={reduceMotion ? false : "hidden"}
+            animate="visible"
+            variants={heroMediaVariants}
+            transition={{ ...motionTimings.hero, duration: 1.1 }}
+          >
+            <Image
+              src="/images/foam-inserts-hero.webp"
+              alt="Dark custom hard case foam insert with camera equipment"
+              fill
+              priority
+              sizes="100vw"
+              className={styles.image}
+            />
+          </motion.div>
+          <div className={styles.heroOverlay} />
+          <div className={styles.vignette} />
+
+          <div className="container-width">
+            <motion.div
+              initial={reduceMotion ? false : "hidden"}
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: reduceMotion ? 0 : 0.1
+                  }
+                }
+              }}
+              className={styles.heroContent}
+            >
+              <motion.nav variants={fadeUpVariants} className={`small-text ${styles.breadcrumb}`} aria-label="Breadcrumb">
+                <Link href="/" className={styles.breadcrumbLink}>
+                  Home
+                </Link>
+                <span>/</span>
+                <span>Foam Inserts</span>
+              </motion.nav>
+              <motion.h1 id="foam-hero-title" variants={fadeUpVariants} className={`h1 ${styles.heroTitle}`}>
+                Foam Sets & Inserts
+              </motion.h1>
+              <motion.p variants={fadeUpVariants} className={`body-large ${styles.heroLead}`}>
+                Strengthen your packaging protective capability against shock and vibration with an intelligently designed custom foam insert.
+              </motion.p>
+              <motion.p variants={fadeUpVariants} className={`body ${styles.heroText}`}>
+                Save time, cut operational expense, and reduce admin headaches by partnering directly with a foam manufacturer using in-house foam insert designers and precision cutting capabilities.
+              </motion.p>
+              <motion.div variants={fadeUpVariants} className="mt-8">
+                <Link href="#resources" className="btn-primary">
+                  Request Quote
+                </Link>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        <div className={styles.navWrap}>
+          <nav className={`container-width ${styles.anchorNav}`} aria-label="Foam inserts page navigation">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setActiveNav(item.href)}
+                className={`${styles.anchorLink} ${activeNav === item.href ? styles.anchorLinkActive : ""}`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        <section id="why-choose" className={`${styles.section} ${styles.whiteSection}`}>
+          <div className={`container-width ${styles.gridTwo} ${styles.matchHeightGrid}`}>
+            <Reveal className={styles.sectionCopy}>
+              <SectionHeader
+                eyebrow="WHY CHOOSE FOAM SETS & INSERTS"
+                title="Why choose foam sets & inserts"
+              />
+              <motion.div
+                className={styles.featureList}
+                initial={reduceMotion ? false : "hidden"}
+                whileInView="visible"
+                viewport={{ once: true, margin: "-80px" }}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: {
+                      staggerChildren: reduceMotion ? 0 : 0.08
+                    }
+                  }
+                }}
+              >
+                {whyFeatures.map(({ title, text, icon: Icon }) => (
+                  <motion.div key={title} variants={fadeUpVariants} className={styles.featureItem}>
+                    <span className={styles.iconCircle} aria-hidden="true">
+                      <Icon size={22} strokeWidth={1.8} />
+                    </span>
+                    <div>
+                      <h3 className="h4">{title}</h3>
+                      <p className="small-text mt-2">{text}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </Reveal>
+
+            <Reveal className={`${styles.imageFrame} ${styles.matchHeightImage}`}>
+              <Image
+                src="/images/showcase-foam-inserts.webp"
+                alt="Precision custom foam insert with organized cavities"
+                fill
+                sizes="(min-width: 1024px) 48vw, 100vw"
+                className={styles.image}
+              />
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="overview" className={`${styles.section} bg-secondary`}>
+          <div className={`container-width ${styles.gridTwo} ${styles.overviewGrid}`}>
+            <Reveal className={styles.imageFrame}>
+              <Image
+                src="/images/foam-inserts-tools-case.webp"
+                alt="Tool set organized in a custom foam insert hard case"
+                fill
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                className={styles.image}
+              />
+            </Reveal>
+            <Reveal>
+              <SectionHeader
+                eyebrow="OVERVIEW"
+                title="Designed and manufactured to protect your product"
+                text="Foam packaging has a strong impact on the reliability of your shipment. Custom fabricated foam can be designed to fit corrugated boxes, plastic boxes, hard cases, ATA cases, crates, and custom packaging systems. Product weight, fragility, sensitivity, and handling conditions help determine the type and amount of foam required for shock, vibration, and abrasion protection."
+              />
+            </Reveal>
+          </div>
+          <div className={`container-width ${styles.overviewBlocks}`}>
+            {overviewBlocks.map(({ title, text, icon: Icon }) => (
+              <Reveal key={title} className={`feature-card ${styles.miniBlock}`}>
+                <span className={styles.iconCircle} aria-hidden="true">
+                  <Icon size={46} strokeWidth={1.6} />
+                </span>
+                <h3 className="h4 mt-5">{title}</h3>
+                <p className="small-text mt-3">{text}</p>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        <SolutionsTabs
+          id="foam-solutions"
+          eyebrow="FOAM SOLUTIONS"
+          title="Explore foam solutions built for every need"
+          tabs={solutionTabs}
+          ariaLabel="Foam solutions"
+        />
+
+        <section id="applications" className={`${styles.section} ${styles.whiteSection}`}>
+          <div className="container-width">
+            <span id="gallery" className="sr-only">
+              Gallery
+            </span>
+            <div className={styles.sliderHeader}>
+              <Reveal>
+                <SectionHeader
+                  eyebrow="APPLICATIONS"
+                  title="Engineered foam assemblies, inserts, and cushioning systems"
+                />
+              </Reveal>
+              <Reveal className={styles.sliderControls}>
+                <button
+                  type="button"
+                  className={styles.sliderButton}
+                  aria-label="Previous application"
+                  onClick={scrollApplicationsPrev}
+                >
+                  <ArrowLeft size={19} />
+                </button>
+                <button
+                  type="button"
+                  className={styles.sliderButton}
+                  aria-label="Next application"
+                  onClick={scrollApplicationsNext}
+                >
+                  <ArrowRight size={19} />
+                </button>
+              </Reveal>
+            </div>
+            <Reveal
+              className={styles.applicationsViewport}
+            >
+              <div ref={applicationsRef} className={styles.applicationsClip}>
+                <div className={styles.applicationsTrack}>
+              {applications.map(({ title, image, imageAlt }) => (
+                    <div className={styles.applicationSlide} key={title}>
+                      <motion.article
+                        className={`industrial-card ${styles.applicationCard}`}
+                        whileHover={reduceMotion ? undefined : { y: -5 }}
+                        transition={motionTimings.luxuryHover}
+                      >
+                        <div className={styles.cardImage}>
+                          <Image
+                            src={image}
+                            alt={imageAlt}
+                            fill
+                            sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                            className={styles.image}
+                          />
+                        </div>
+                        <div className={styles.cardContent}>
+                          <h3 className={`h4 ${styles.applicationTitle}`}>{title}</h3>
+                        </div>
+                      </motion.article>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="foam-types" className={`${styles.section} bg-secondary`}>
+          <div className="container-width">
+            <div className={styles.centerHeader}>
+              <Reveal>
+                <SectionHeader
+                  eyebrow="FOAM TYPES"
+                  title="Common industrial protective packaging foams"
+                  text="We identify the foam that will perform best for your application, then design, die-cut, and assemble it for strong in-transit protection with minimum expense. Foam selection depends on product performance needs, cost, durability, cleanliness, presentation, and protection goals."
+                />
+              </Reveal>
+            </div>
+            <Reveal className={styles.foamTypesViewport}>
+              <div
+                ref={foamTypesRef}
+                className={styles.applicationsClip}
+                onMouseEnter={() => setIsFoamTypesPaused(true)}
+                onMouseLeave={() => setIsFoamTypesPaused(false)}
+                onFocus={() => setIsFoamTypesPaused(true)}
+                onBlur={() => setIsFoamTypesPaused(false)}
+              >
+                <div className={styles.applicationsTrack}>
+                  {foamTypes.map(({ title, text, image }) => (
+                    <div className={styles.foamTypeSlide} key={title}>
+                      <motion.article
+                        className={`industrial-card ${styles.foamCard}`}
+                      >
+                        <div className={styles.cardImage}>
+                          <Image
+                            src={image}
+                            alt={`${title} protective packaging foam`}
+                            fill
+                            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                            className={styles.image}
+                          />
+                        </div>
+                        <div className={styles.cardContent}>
+                          <Sparkles className="mb-3 h-5 w-5 text-accent" />
+                          <h3 className={`h4 ${styles.foamTitle}`}>{title}</h3>
+                          <p className="small-text mt-3">{text}</p>
+                        </div>
+                      </motion.article>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <div id="resources">
+          <FinalCtaBanner />
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+}

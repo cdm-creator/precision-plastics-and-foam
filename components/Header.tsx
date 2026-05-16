@@ -9,11 +9,11 @@ import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "Home", href: "#home" },
-  { label: "Foam Inserts", href: "#foam-inserts" },
-  { label: "Plastic Machining", href: "#plastic-machining" },
+  { label: "Foam Inserts", href: "/foam-inserts" },
+  { label: "Plastic Machining", href: "/plastic-machining" },
   { label: "Industries", href: "#industries" },
   { label: "Process", href: "#process" },
-  { label: "About", href: "#why-us" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "#contact" }
 ];
 

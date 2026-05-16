@@ -68,7 +68,7 @@
 .button {
   display: flex;
   flex-direction: row;
-  gap:10x;
+  gap:5px;
   transition:
     transform var(--transition-base) var(--ease-industrial),
     box-shadow var(--transition-base) var(--ease-industrial),
