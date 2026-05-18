@@ -2,6 +2,7 @@
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { HeroBottomDivider } from "@/components/HeroBottomDivider";
 import { FinalCtaBanner } from "@/components/home/final-cta-banner";
 import { TopBar } from "@/components/layout/top-bar";
 import { SolutionsTabs } from "@/components/solutions-tabs";
@@ -340,6 +341,7 @@ export default function FoamInsertsPage() {
           </motion.div>
           <div className={styles.heroOverlay} />
           <div className={styles.vignette} />
+          <HeroBottomDivider />
 
           <div className="container-width">
             <motion.div
@@ -372,7 +374,7 @@ export default function FoamInsertsPage() {
                 Save time, cut operational expense, and reduce admin headaches by partnering directly with a foam manufacturer using in-house foam insert designers and precision cutting capabilities.
               </motion.p>
               <motion.div variants={fadeUpVariants} className="mt-8">
-                <Link href="#resources" className="btn-primary">
+                <Link href="/contact" className="btn-primary">
                   Request Quote
                 </Link>
               </motion.div>

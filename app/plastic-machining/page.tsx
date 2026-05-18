@@ -2,6 +2,7 @@
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { HeroBottomDivider } from "@/components/HeroBottomDivider";
 import { TopBar } from "@/components/layout/top-bar";
 import { fadeUpVariants, heroMediaVariants, motionTimings } from "@/lib/motion";
 import { motion, useReducedMotion } from "framer-motion";
@@ -192,6 +193,7 @@ export default function PlasticMachiningPage() {
           </motion.div>
           <div className={styles.heroOverlay} />
           <div className={styles.heroVignette} />
+          <HeroBottomDivider />
 
           <div className="container-width">
             <motion.div
@@ -223,10 +225,10 @@ export default function PlasticMachiningPage() {
                 performance you can rely on.
               </motion.p>
               <motion.div variants={fadeUpVariants} className={styles.heroActions}>
-                <Link href="#services" className="btn-primary">
+                <Link href="/plastic-machining#services" className="btn-primary">
                   Explore Our Services
                 </Link>
-                <Link href="#contact" className={`btn-outline ${styles.darkOutline}`}>
+                <Link href="/contact" className={`btn-outline ${styles.darkOutline}`}>
                   Contact Us
                 </Link>
               </motion.div>
@@ -388,7 +390,7 @@ export default function PlasticMachiningPage() {
                   strategy to delivery-ready plastic components.
                 </p>
               </div>
-              <Link href="mailto:quotes@precisionplasticsfoam.com" className={`btn-primary ${styles.ctaAction}`}>
+              <Link href="/contact" className={`btn-primary ${styles.ctaAction}`}>
                 Request a Quote
                 <PackageCheck size={17} />
               </Link>

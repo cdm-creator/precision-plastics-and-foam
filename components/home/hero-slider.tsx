@@ -23,7 +23,7 @@ const slides = [
       "Industrial-grade materials"
     ],
     cta: "Request a Quote",
-    href: "#contact",
+    href: "/contact",
     image: "/images/hero-industrial-machinery.webp",
     imageAlt: "CNC machining precision industrial component"
   },
@@ -37,16 +37,16 @@ const slides = [
       "Custom packaging solutions"
     ],
     cta: "Explore Foam Solutions",
-    href: "#foam-inserts",
+    href: "/foam-inserts",
     image: "/images/hero-foam-production.webp",
     imageAlt: "Industrial protective packaging and foam insert preparation"
   }
 ];
 
 const featureStrip = [
-  "Custom Manufacturing",
-  "One-stop Fabrication",
-  "Reliable Delivery"
+  { label: "Custom Manufacturing", href: "/industries/custom-manufacturing-rd" },
+  { label: "One-stop Fabrication", href: "/plastic-machining" },
+  { label: "Reliable Delivery", href: "/contact" }
 ];
 
 export function HeroSlider() {
@@ -178,11 +178,11 @@ export function HeroSlider() {
       <div className="hero-slider__strip">
         <div className="container-width hero-slider__strip-inner">
           {featureStrip.map((feature) => (
-            <Link href="#services" key={feature} className="hero-slider__strip-item">
+            <Link href={feature.href} key={feature.label} className="hero-slider__strip-item">
               <span className="hero-slider__strip-icon">
                 <ArrowRight size={15} />
               </span>
-              <span>{feature}</span>
+              <span>{feature.label}</span>
             </Link>
           ))}
         </div>

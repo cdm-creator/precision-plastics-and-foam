@@ -3,8 +3,10 @@
   overflow: hidden;
   padding-block: calc(var(--section-padding-y) * 1.05);
   background:
-    radial-gradient(circle at 16% 16%, rgba(37, 99, 235, 0.06), transparent 26rem),
-    var(--color-soft-white);
+    radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.18), transparent 28rem),
+    radial-gradient(circle at 18% 78%, rgba(219, 75, 25, 0.16), transparent 24rem),
+    var(--color-industrial-navy);
+  color: var(--color-on-dark);
 }
 
 .section::before {
@@ -12,8 +14,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(37, 99, 235, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: radial-gradient(circle at 50% 45%, black, transparent 74%);
   pointer-events: none;
@@ -32,11 +34,13 @@
 
 .title {
   margin-top: 0.9rem;
+  color: var(--color-white);
 }
 
 .intro {
   max-width: 45rem;
   margin: 1.15rem auto 0;
+  color: var(--color-on-dark-muted);
 }
 
 .tabs {
@@ -46,11 +50,12 @@
   gap: 0.35rem;
   margin: 3rem auto 0;
   overflow-x: auto;
-  border: 1px solid var(--color-border-gray);
+  border: 1px solid color-mix(in srgb, var(--color-white) 16%, transparent);
   border-radius: 999px;
-  background: var(--color-card-background);
+  background: color-mix(in srgb, var(--color-white) 8%, transparent);
   padding: 0.4rem;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 22px 55px rgba(2, 6, 23, 0.22);
+  backdrop-filter: blur(14px);
   scrollbar-width: none;
 }
 
@@ -71,7 +76,7 @@
   font-family: var(--font-poppins);
   font-size: var(--text-small);
   font-weight: var(--weight-semibold);
-  color: var(--color-muted-text-strong);
+  color: var(--color-on-dark-muted);
   cursor: pointer;
   transition:
     background var(--transition-base) var(--ease-industrial),
@@ -80,7 +85,7 @@
 
 .tab:hover,
 .tabActive {
-  background: rgba(249, 115, 22, 0.09);
+  background: rgba(219, 75, 25, 0.16);
   color: var(--color-industrial-orange);
 }
 
@@ -101,13 +106,14 @@
   gap: 2.5rem;
   margin-top: 1.5rem;
   overflow: hidden;
-  border: 1px solid var(--color-border-gray);
+  border: 1px solid color-mix(in srgb, var(--color-white) 14%, transparent);
   border-radius: calc(var(--radius-industrial) * 1.75);
   background:
-    radial-gradient(circle at 12% 16%, rgba(37, 99, 235, 0.05), transparent 18rem),
-    var(--color-card-background);
+    radial-gradient(circle at 12% 16%, rgba(37, 99, 235, 0.13), transparent 18rem),
+    color-mix(in srgb, var(--color-white) 7%, transparent);
   padding: 2rem;
-  box-shadow: var(--shadow-industrial);
+  box-shadow: 0 28px 70px rgba(2, 6, 23, 0.28);
+  backdrop-filter: blur(12px);
 }
 
 .panel::before {
@@ -125,11 +131,13 @@
 
 .panelTitle {
   max-width: 34rem;
+  color: var(--color-white);
 }
 
 .panelText {
   max-width: 39rem;
   margin-top: 1rem;
+  color: var(--color-on-dark-muted);
 }
 
 .list {
@@ -144,6 +152,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  color: color-mix(in srgb, var(--color-white) 86%, transparent);
 }
 
 .dot {
@@ -163,14 +172,14 @@
 }
 
 .chip {
-  border: 1px solid var(--color-border-gray);
+  border: 1px solid color-mix(in srgb, var(--color-white) 14%, transparent);
   border-radius: 999px;
-  background: var(--color-soft-white);
+  background: color-mix(in srgb, var(--color-white) 8%, transparent);
   padding: 0.55rem 0.9rem;
   font-family: var(--font-poppins);
   font-size: var(--text-small);
   font-weight: var(--weight-medium);
-  color: var(--color-muted-text-strong);
+  color: var(--color-on-dark-muted);
   transition:
     border-color var(--transition-base) var(--ease-industrial),
     color var(--transition-base) var(--ease-industrial),

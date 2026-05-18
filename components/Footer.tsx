@@ -5,28 +5,30 @@ import styles from "./footer.module.css";
 
 const columns = [
   {
-    title: "Quick Links",
+    title: "Company",
     links: [
-       { label: "Home", href: "#home" },
-      { label: "About", href: "#why-us" },
-      { label: "Process", href: "#process" },
-      { label: "Applications", href: "#applications" }
+      { label: "Home", href: "/" },
+      { label: "About", href: "/about" },
+      { label: "Industries", href: "/industries" },
+      { label: "Contact", href: "/contact" }
     ]
   },
   {
     title: "Services",
     links: [
-      { label: "Custom Foam Inserts", href: "#foam-inserts" },
-      { label: "Plastic Machining", href: "#plastic-machining" },
-      { label: "Protective Packaging", href: "#services" }
+      { label: "Custom Foam Inserts", href: "/foam-inserts" },
+      { label: "Plastic Machining", href: "/plastic-machining" }
     ]
   },
   {
     title: "Industries",
     links: [
-      { label: "Aerospace", href: "#industries" },
-      { label: "Medical", href: "#industries" },
-      { label: "Electronics", href: "#industries" }
+      { label: "Aerospace & Defense", href: "/industries/aerospace-defense" },
+      { label: "Oil & Gas", href: "/industries/oil-gas" },
+      { label: "Medical Devices", href: "/industries/medical-devices" },
+      { label: "Industrial Automation", href: "/industries/industrial-automation" },
+      { label: "Energy & Power", href: "/industries/energy-power" },
+      { label: "Custom Manufacturing & R&D", href: "/industries/custom-manufacturing-rd" }
     ]
   }
 ];
@@ -57,18 +59,18 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer id="contact" className={`dark-panel ${styles.footer}`}>
-      <div className="container-width grid gap-10 py-20 md:grid-cols-2 lg:grid-cols-[1.2fr_2fr_1.1fr]">
+      <div className="container-width grid gap-10 py-20 md:grid-cols-2 lg:grid-cols-[1.35fr_2.25fr_1.1fr]">
         <div>
           <Link
-            href="#home"
+            href="/"
             aria-label="Precision Plastics & Foam home"
             className="focus-ring inline-flex"
           >
             <Image
-              src="/images/logo.webp"
+              src="/images/dark-bg-logo.webp"
               alt="Precision Plastics & Foam"
-              width={260}
-              height={65}
+              width={280}
+              height={75}
               className={styles.logo}
             />
           </Link>

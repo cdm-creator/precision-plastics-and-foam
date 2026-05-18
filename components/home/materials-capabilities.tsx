@@ -21,7 +21,7 @@ const tabs = [
       "Polyurethane",
       "Cross-linked foam"
     ],
-    chips: ["Lightweight", "Shock absorption", "Cushioning", "Surface protection"],
+    chips: ["Lightweight", "Shock absorption", "Cushioning", "Protection"],
     image: "/images/showcase-foam-inserts.webp",
     imageAlt: "Precision-cut foam insert and protective packaging material"
   },
@@ -33,8 +33,8 @@ const tabs = [
     text: "Our plastic material options are chosen based on strength, rigidity, chemical resistance, machinability, and end-use performance.",
     items: ["Acrylic", "HDPE", "PVC", "Nylon", "Polycarbonate"],
     chips: ["Durable", "Chemical resistant", "Rigid", "High performance"],
-    image: "/images/service-capability-plastic-machining.webp",
-    imageAlt: "CNC machining a white plastic component"
+    image: "https://images.pexels.com/photos/37335825/pexels-photo-37335825.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1400",
+    imageAlt: "Close-up CNC machining head in an industrial precision manufacturing setting"
   },
   {
     id: "capabilities",

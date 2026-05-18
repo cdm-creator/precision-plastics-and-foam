@@ -57,17 +57,17 @@ export function FinalCtaBanner() {
         </motion.p>
         <motion.div variants={fadeUpVariants} className={styles.actions}>
           <Link
-            href="mailto:quotes@precisionplasticsfoam.com"
+            href="/contact"
             className={`btn-primary ${styles.button} ${styles.primary}`}
           >
             Request Quote
             <PackageCheck size={17} />
           </Link>
           <Link
-            href="tel:+15550148290"
+            href="/industries"
             className={`btn-secondary ${styles.button} ${styles.secondary}`}
           >
-            Contact Team
+            View Industries
             <ArrowRight size={17} />
           </Link>
         </motion.div>

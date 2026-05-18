@@ -3,8 +3,8 @@
   overflow: hidden;
   padding-block: calc(var(--section-padding-y) * 1.05);
   background:
-    radial-gradient(circle at 16% 22%, rgba(37, 99, 235, 0.06), transparent 26rem),
-    var(--color-soft-white);
+    radial-gradient(circle at 50% 12%, rgba(37, 99, 235, 0.05), transparent 30rem),
+    #f1f6fb;
 }
 
 .section::before,

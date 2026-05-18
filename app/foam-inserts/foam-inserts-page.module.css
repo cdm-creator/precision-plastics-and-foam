@@ -29,8 +29,8 @@
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--color-industrial-navy) 94%, transparent), color-mix(in srgb, var(--color-industrial-navy) 46%, transparent)),
-    linear-gradient(180deg, color-mix(in srgb, var(--color-charcoal) 28%, transparent), color-mix(in srgb, var(--color-industrial-navy) 88%, transparent));
+    linear-gradient(90deg, color-mix(in srgb, var(--color-industrial-navy) 88%, transparent), color-mix(in srgb, var(--color-industrial-navy) 38%, transparent)),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-charcoal) 14%, transparent), color-mix(in srgb, var(--color-industrial-navy) 70%, transparent));
 }
 
 .vignette,
@@ -38,12 +38,12 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(circle at center, transparent 0 36%, color-mix(in srgb, var(--color-charcoal) 72%, transparent) 100%);
+  background: radial-gradient(circle at center, transparent 0 36%, color-mix(in srgb, var(--color-charcoal) 58%, transparent) 100%);
 }
 
 .heroContent {
   max-width: calc(var(--container-width) * 0.46);
-  padding-block: calc(var(--section-padding-y) * 1.6);
+  padding-block: calc(var(--section-padding-y) * 1.35) calc(var(--section-padding-y) * 2.25);
 }
 
 .breadcrumb {
@@ -82,7 +82,7 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  border-block: 1px solid var(--color-border-gray);
+  border-bottom: 1px solid var(--color-border-gray);
   background: color-mix(in srgb, var(--color-card-background) 94%, transparent);
   box-shadow: var(--shadow-card);
   backdrop-filter: blur(12px);
@@ -472,7 +472,7 @@
   }
 
   .heroContent {
-    padding-block: calc(var(--section-padding-y) * 1.15);
+    padding-block: calc(var(--section-padding-y) * 1.05) calc(var(--section-padding-y) * 1.85);
   }
 
   .matchHeightImage {

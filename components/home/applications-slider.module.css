@@ -27,6 +27,7 @@
   display: grid;
   gap: 1.5rem;
   align-items: end;
+  text-align: left;
 }
 
 .copy {
@@ -53,10 +54,10 @@
   width: 3rem;
   height: 3rem;
   place-items: center;
-  border: 1px solid var(--color-border-gray);
+  border: 1px solid color-mix(in srgb, var(--color-precision-blue) 28%, transparent);
   border-radius: 999px;
-  background: var(--color-card-background);
-  color: var(--color-industrial-navy);
+  background: color-mix(in srgb, var(--color-precision-blue) 12%, var(--color-card-background));
+  color: var(--color-precision-blue);
   box-shadow: var(--shadow-card);
   cursor: pointer;
   transition:
@@ -68,8 +69,8 @@
 
 .arrowButton:hover {
   border-color: rgba(249, 115, 22, 0.5);
-  background: var(--color-industrial-orange);
-  color: var(--color-white);
+  background: color-mix(in srgb, var(--color-industrial-orange) 10%, var(--color-card-background));
+  color: var(--color-industrial-orange);
   transform: translateY(-0.12rem);
 }
 
@@ -106,7 +107,14 @@
   transition:
     border-color var(--transition-slow) var(--ease-industrial),
     box-shadow var(--transition-slow) var(--ease-industrial),
-    transform var(--transition-slow) var(--ease-industrial);
+  transform var(--transition-slow) var(--ease-industrial);
+}
+
+.cardLink {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  color: inherit;
 }
 
 .card:hover {
@@ -117,7 +125,7 @@
 
 .imageWrap {
   position: relative;
-  min-height: 17rem;
+  min-height: 15rem;
   overflow: hidden;
   background: var(--color-industrial-navy);
 }
@@ -150,8 +158,16 @@
 
 .content {
   display: grid;
-  gap: 0.9rem;
-  padding: 1.35rem;
+  flex: 1;
+  gap: 1rem;
+  padding: 1.65rem;
+}
+
+.number {
+  color: var(--color-industrial-orange);
+  font-size: var(--text-small);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.04em;
 }
 
 .titleRow {
@@ -192,6 +208,7 @@
 
 .description {
   margin: 0;
+  color: var(--color-muted-text-strong);
 }
 
 @media (min-width: 768px) {
@@ -234,6 +251,6 @@
   }
 
   .imageWrap {
-    min-height: 18.5rem;
+    min-height: 18rem;
   }
 }

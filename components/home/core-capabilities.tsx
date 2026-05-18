@@ -144,7 +144,7 @@ export function CoreCapabilities() {
             We&rsquo;re here to help you get started in the right direction with
             your project.
           </p>
-          <Link href="#contact" className="btn-light-pill">
+          <Link href="/contact" className="btn-light-pill">
             Get a Quote
             <ArrowRight size={17} />
           </Link>

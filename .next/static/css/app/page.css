@@ -137,6 +137,7 @@
   display: grid;
   gap: 1.5rem;
   align-items: end;
+  text-align: left;
 }
 
 .applications-slider_copy__j_x18 {
@@ -163,10 +164,10 @@
   width: 3rem;
   height: 3rem;
   place-items: center;
-  border: 1px solid var(--color-border-gray);
+  border: 1px solid color-mix(in srgb, var(--color-precision-blue) 28%, transparent);
   border-radius: 999px;
-  background: var(--color-card-background);
-  color: var(--color-industrial-navy);
+  background: color-mix(in srgb, var(--color-precision-blue) 12%, var(--color-card-background));
+  color: var(--color-precision-blue);
   box-shadow: var(--shadow-card);
   cursor: pointer;
   transition:
@@ -178,8 +179,8 @@
 
 .applications-slider_arrowButton__CjArD:hover {
   border-color: rgba(249, 115, 22, 0.5);
-  background: var(--color-industrial-orange);
-  color: var(--color-white);
+  background: color-mix(in srgb, var(--color-industrial-orange) 10%, var(--color-card-background));
+  color: var(--color-industrial-orange);
   transform: translateY(-0.12rem);
 }
 
@@ -216,7 +217,14 @@
   transition:
     border-color var(--transition-slow) var(--ease-industrial),
     box-shadow var(--transition-slow) var(--ease-industrial),
-    transform var(--transition-slow) var(--ease-industrial);
+  transform var(--transition-slow) var(--ease-industrial);
+}
+
+.applications-slider_cardLink__IXwGE {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  color: inherit;
 }
 
 .applications-slider_card__zXCKc:hover {
@@ -227,7 +235,7 @@
 
 .applications-slider_imageWrap__QXMfv {
   position: relative;
-  min-height: 17rem;
+  min-height: 15rem;
   overflow: hidden;
   background: var(--color-industrial-navy);
 }
@@ -261,8 +269,16 @@
 
 .applications-slider_content__Scfad {
   display: grid;
-  gap: 0.9rem;
-  padding: 1.35rem;
+  flex: 1;
+  gap: 1rem;
+  padding: 1.65rem;
+}
+
+.applications-slider_number__DSCfb {
+  color: var(--color-industrial-orange);
+  font-size: var(--text-small);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.04em;
 }
 
 .applications-slider_titleRow__LKSzF {
@@ -303,6 +319,7 @@
 
 .applications-slider_description__Hjz8j {
   margin: 0;
+  color: var(--color-muted-text-strong);
 }
 
 @media (min-width: 768px) {
@@ -345,7 +362,7 @@
   }
 
   .applications-slider_imageWrap__QXMfv {
-    min-height: 18.5rem;
+    min-height: 18rem;
   }
 }
 
@@ -579,11 +596,24 @@
     padding-bottom: 13.5rem;
   }
 
+  .core-capabilities_headingTitle__wOsVP {
+    font-size: calc(var(--text-h2) - 0.125rem);
+  }
+
+  .core-capabilities_headingText__2_TDT {
+    font-size: calc(var(--text-body) - 1px);
+  }
+
   .core-capabilities_cta__tEMIX {
+    bottom: -13% !important;
     grid-template-columns: 1fr;
     padding: 1.5rem;
     text-align: center;
     justify-items: center;
+  }
+
+  .core-capabilities_ctaText__Q1FAC {
+    font-size: calc(clamp(1.45rem, 2vw, 1.8rem) - 1px);
   }
 }
 
@@ -706,8 +736,10 @@
   overflow: hidden;
   padding-block: calc(var(--section-padding-y) * 1.05);
   background:
-    radial-gradient(circle at 16% 16%, rgba(37, 99, 235, 0.06), transparent 26rem),
-    var(--color-soft-white);
+    radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.18), transparent 28rem),
+    radial-gradient(circle at 18% 78%, rgba(219, 75, 25, 0.16), transparent 24rem),
+    var(--color-industrial-navy);
+  color: var(--color-on-dark);
 }
 
 .materials-capabilities_section__D3cv0::before {
@@ -715,8 +747,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(37, 99, 235, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
   background-size: 42px 42px;
   -webkit-mask-image: radial-gradient(circle at 50% 45%, black, transparent 74%);
           mask-image: radial-gradient(circle at 50% 45%, black, transparent 74%);
@@ -736,11 +768,13 @@
 
 .materials-capabilities_title__eTvEh {
   margin-top: 0.9rem;
+  color: var(--color-white);
 }
 
 .materials-capabilities_intro__TrEu9 {
   max-width: 45rem;
   margin: 1.15rem auto 0;
+  color: var(--color-on-dark-muted);
 }
 
 .materials-capabilities_tabs__nhOEX {
@@ -751,11 +785,12 @@
   gap: 0.35rem;
   margin: 3rem auto 0;
   overflow-x: auto;
-  border: 1px solid var(--color-border-gray);
+  border: 1px solid color-mix(in srgb, var(--color-white) 16%, transparent);
   border-radius: 999px;
-  background: var(--color-card-background);
+  background: color-mix(in srgb, var(--color-white) 8%, transparent);
   padding: 0.4rem;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 22px 55px rgba(2, 6, 23, 0.22);
+  backdrop-filter: blur(14px);
   scrollbar-width: none;
 }
 
@@ -776,7 +811,7 @@
   font-family: var(--font-poppins);
   font-size: var(--text-small);
   font-weight: var(--weight-semibold);
-  color: var(--color-muted-text-strong);
+  color: var(--color-on-dark-muted);
   cursor: pointer;
   transition:
     background var(--transition-base) var(--ease-industrial),
@@ -785,7 +820,7 @@
 
 .materials-capabilities_tab__mTDOx:hover,
 .materials-capabilities_tabActive__Pbr3A {
-  background: rgba(249, 115, 22, 0.09);
+  background: rgba(219, 75, 25, 0.16);
   color: var(--color-industrial-orange);
 }
 
@@ -806,13 +841,14 @@
   gap: 2.5rem;
   margin-top: 1.5rem;
   overflow: hidden;
-  border: 1px solid var(--color-border-gray);
+  border: 1px solid color-mix(in srgb, var(--color-white) 14%, transparent);
   border-radius: calc(var(--radius-industrial) * 1.75);
   background:
-    radial-gradient(circle at 12% 16%, rgba(37, 99, 235, 0.05), transparent 18rem),
-    var(--color-card-background);
+    radial-gradient(circle at 12% 16%, rgba(37, 99, 235, 0.13), transparent 18rem),
+    color-mix(in srgb, var(--color-white) 7%, transparent);
   padding: 2rem;
-  box-shadow: var(--shadow-industrial);
+  box-shadow: 0 28px 70px rgba(2, 6, 23, 0.28);
+  backdrop-filter: blur(12px);
 }
 
 .materials-capabilities_panel__co_pR::before {
@@ -830,11 +866,13 @@
 
 .materials-capabilities_panelTitle__AQkgU {
   max-width: 34rem;
+  color: var(--color-white);
 }
 
 .materials-capabilities_panelText__XfHYe {
   max-width: 39rem;
   margin-top: 1rem;
+  color: var(--color-on-dark-muted);
 }
 
 .materials-capabilities_list__r2TUb {
@@ -849,6 +887,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  color: color-mix(in srgb, var(--color-white) 86%, transparent);
 }
 
 .materials-capabilities_dot__8kbbv {
@@ -868,14 +907,14 @@
 }
 
 .materials-capabilities_chip__TW2OU {
-  border: 1px solid var(--color-border-gray);
+  border: 1px solid color-mix(in srgb, var(--color-white) 14%, transparent);
   border-radius: 999px;
-  background: var(--color-soft-white);
+  background: color-mix(in srgb, var(--color-white) 8%, transparent);
   padding: 0.55rem 0.9rem;
   font-family: var(--font-poppins);
   font-size: var(--text-small);
   font-weight: var(--weight-medium);
-  color: var(--color-muted-text-strong);
+  color: var(--color-on-dark-muted);
   transition:
     border-color var(--transition-base) var(--ease-industrial),
     color var(--transition-base) var(--ease-industrial),
@@ -1562,8 +1601,8 @@
   overflow: hidden;
   padding-block: calc(var(--section-padding-y) * 1.05);
   background:
-    radial-gradient(circle at 16% 22%, rgba(37, 99, 235, 0.06), transparent 26rem),
-    var(--color-soft-white);
+    radial-gradient(circle at 50% 12%, rgba(37, 99, 235, 0.05), transparent 30rem),
+    #f1f6fb;
 }
 
 .services-slider_section__YgFTs::before,

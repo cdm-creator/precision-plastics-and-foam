@@ -28,37 +28,37 @@ const services: Service[] = [
   {
     title: "Cut-to-Size",
     text: "Our advanced cutting equipment allows us to deliver custom-cut plastic sheets, rods, and tubes. Whether you need a single piece or bulk orders, each cut is prepared for accuracy and consistency.",
-    href: "#plastic-machining",
+    href: "/plastic-machining",
     icon: Scissors
   },
   {
     title: "3D Printing",
     text: "We offer SLA and SLS 3D printing services to produce high-resolution, durable, and detailed parts for prototypes, industrial testing, and functional end-use components.",
-    href: "#process",
+    href: "/plastic-machining#services",
     icon: Printer
   },
   {
     title: "CNC Routing & Machining",
     text: "We machine complex shapes, intricate patterns, and detailed plastic components for prototypes, production runs, and industrial applications.",
-    href: "#plastic-machining",
+    href: "/plastic-machining",
     icon: Router
   },
   {
     title: "Custom Fabrication",
     text: "We provide custom design, cutting, drilling, and fabrication services to create tailored plastic solutions for specific project needs.",
-    href: "#foam-inserts",
+    href: "/contact",
     icon: Wrench
   },
   {
     title: "Film Conversion",
     text: "Our plastic film converting service supports precise cutting, slitting, and rewinding to deliver custom sizes for packaging and manufacturing applications.",
-    href: "#applications",
+    href: "/plastic-machining#services",
     icon: Film
   },
   {
     title: "Foam Insert Design",
     text: "Custom cavity layouts, case-ready foam systems, and protective packaging plans help organize sensitive tools, products, and devices.",
-    href: "#foam-inserts",
+    href: "/foam-inserts",
     icon: Box
   }
 ];
@@ -88,7 +88,7 @@ export function ServicesSlider() {
 
     const autoplay = window.setInterval(() => {
       emblaApi.scrollNext();
-    }, 6200);
+    }, 4200);
 
     return () => window.clearInterval(autoplay);
   }, [emblaApi, isPaused, reduceMotion]);
@@ -110,6 +110,9 @@ export function ServicesSlider() {
           }}
           className={styles.header}
         >
+          <motion.p variants={fadeUpVariants} className="eyebrow mb-3">
+            Our Services
+          </motion.p>
           <motion.h2 variants={fadeUpVariants} className={`h2 ${styles.heading}`}>
             Find The Perfect Solution With Our Services
           </motion.h2>

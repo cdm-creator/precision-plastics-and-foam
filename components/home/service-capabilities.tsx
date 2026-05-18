@@ -15,7 +15,7 @@ const capabilities = [
     image: "/images/service-capability-foam.webp",
     imageAlt: "Dark custom foam insert case interior",
     icon: PackageCheck,
-    href: "#foam-inserts",
+    href: "/foam-inserts",
     variant: "dark",
     tags: [
       "Case inserts",
@@ -32,7 +32,7 @@ const capabilities = [
     image: "/images/service-capability-plastic-machining.webp",
     imageAlt: "CNC machining white plastic component",
     icon: Settings,
-    href: "#plastic-machining",
+    href: "/plastic-machining",
     variant: "light",
     tags: [
       "CNC plastic machining",

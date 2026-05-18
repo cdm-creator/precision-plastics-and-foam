@@ -29,20 +29,20 @@
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--color-industrial-navy) 96%, transparent), color-mix(in srgb, var(--color-industrial-navy) 68%, transparent), color-mix(in srgb, var(--color-industrial-navy) 22%, transparent)),
-    linear-gradient(180deg, color-mix(in srgb, var(--color-charcoal) 20%, transparent), color-mix(in srgb, var(--color-industrial-navy) 78%, transparent));
+    linear-gradient(90deg, color-mix(in srgb, var(--color-industrial-navy) 90%, transparent), color-mix(in srgb, var(--color-industrial-navy) 58%, transparent), color-mix(in srgb, var(--color-industrial-navy) 12%, transparent)),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-charcoal) 12%, transparent), color-mix(in srgb, var(--color-industrial-navy) 68%, transparent));
 }
 
 .heroVignette {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(circle at 72% 50%, transparent 0 28%, color-mix(in srgb, var(--color-charcoal) 72%, transparent) 100%);
+  background: radial-gradient(circle at 72% 50%, transparent 0 28%, color-mix(in srgb, var(--color-charcoal) 58%, transparent) 100%);
 }
 
 .heroContent {
   max-width: calc(var(--container-width) * 0.48);
-  padding-block: calc(var(--section-padding-y) * 1.35);
+  padding-block: calc(var(--section-padding-y) * 1.25) calc(var(--section-padding-y) * 2.05);
 }
 
 .breadcrumb {
@@ -272,7 +272,7 @@
 }
 
 .storyImage {
-  min-height: calc(var(--section-padding-y) * 6.2);
+  min-height: calc(var(--section-padding-y) * 6.1);
 }
 
 .missionCard {
