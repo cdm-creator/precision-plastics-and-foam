@@ -29,20 +29,20 @@
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--color-industrial-navy) 96%, transparent) 0%, color-mix(in srgb, var(--color-industrial-navy) 82%, transparent) 36%, color-mix(in srgb, var(--color-industrial-navy) 22%, transparent) 76%),
-    linear-gradient(180deg, color-mix(in srgb, var(--color-charcoal) 22%, transparent), color-mix(in srgb, var(--color-industrial-navy) 82%, transparent));
+    linear-gradient(90deg, color-mix(in srgb, var(--color-industrial-navy) 90%, transparent) 0%, color-mix(in srgb, var(--color-industrial-navy) 62%, transparent) 36%, color-mix(in srgb, var(--color-industrial-navy) 14%, transparent) 76%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-charcoal) 12%, transparent), color-mix(in srgb, var(--color-industrial-navy) 70%, transparent));
 }
 
 .heroVignette {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(circle at 72% 52%, transparent 0 24%, color-mix(in srgb, var(--color-charcoal) 70%, transparent) 100%);
+  background: radial-gradient(circle at 72% 52%, transparent 0 24%, color-mix(in srgb, var(--color-charcoal) 58%, transparent) 100%);
 }
 
 .heroContent {
   max-width: calc(var(--container-width) * 0.46);
-  padding-block: calc(var(--section-padding-y) * 1.35);
+  padding-block: calc(var(--section-padding-y) * 1.25) calc(var(--section-padding-y) * 2.05);
 }
 
 .breadcrumb {
@@ -459,7 +459,7 @@
   }
 
   .heroContent {
-    padding-block: calc(var(--section-padding-y) * 1.05);
+    padding-block: calc(var(--section-padding-y) * 1) calc(var(--section-padding-y) * 1.75);
   }
 
   .heroActions {

@@ -2,6 +2,7 @@
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { HeroBottomDivider } from "@/components/HeroBottomDivider";
 import { TopBar } from "@/components/layout/top-bar";
 import { fadeUpVariants, heroMediaVariants, motionTimings } from "@/lib/motion";
 import { motion, useReducedMotion } from "framer-motion";
@@ -121,6 +122,7 @@ export default function AboutPage() {
           </motion.div>
           <div className={styles.heroOverlay} />
           <div className={styles.heroVignette} />
+          <HeroBottomDivider />
 
           <div className="container-width">
             <motion.div
@@ -168,7 +170,7 @@ export default function AboutPage() {
                 concept to finished parts, our team focuses on fit, function,
                 durability, and long-term customer value.
               </p>
-              <Link href="#story" className="btn-primary mt-8 inline-flex">
+              <Link href="/about#story" className="btn-primary mt-8 inline-flex">
                 Know More About Us
               </Link>
             </Reveal>
@@ -176,8 +178,8 @@ export default function AboutPage() {
             <Reveal className={styles.whoImages}>
               <div className={styles.largeImage}>
                 <Image
-                  src="https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1400"
-                  alt="Industrial manufacturing equipment in a clean production facility"
+                  src="https://images.pexels.com/photos/32845661/pexels-photo-32845661.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1400"
+                  alt="Industrial engineer operating CNC machinery in a modern factory"
                   fill
                   sizes="(min-width: 1024px) 44vw, 100vw"
                   className={styles.image}
@@ -322,11 +324,11 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className={styles.ctaActions}>
-                <Link href="mailto:quotes@precisionplasticsfoam.com" className="btn-primary">
+                <Link href="/contact" className="btn-primary">
                   Request Quote
                   <PackageCheck size={17} />
                 </Link>
-                <Link href="tel:+15550148290" className="btn-secondary">
+                <Link href="/contact" className="btn-secondary">
                   Contact Team
                   <ArrowRight size={17} />
                 </Link>

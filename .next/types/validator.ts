@@ -45,10 +45,82 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../app/contact/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/contact">> = Specific
+  const handler = {} as typeof import("../../app/contact/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/foam-inserts/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/foam-inserts">> = Specific
   const handler = {} as typeof import("../../app/foam-inserts/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/industries/aerospace-defense/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/industries/aerospace-defense">> = Specific
+  const handler = {} as typeof import("../../app/industries/aerospace-defense/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/industries/custom-manufacturing-rd/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/industries/custom-manufacturing-rd">> = Specific
+  const handler = {} as typeof import("../../app/industries/custom-manufacturing-rd/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/industries/energy-power/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/industries/energy-power">> = Specific
+  const handler = {} as typeof import("../../app/industries/energy-power/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/industries/industrial-automation/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/industries/industrial-automation">> = Specific
+  const handler = {} as typeof import("../../app/industries/industrial-automation/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/industries/medical-devices/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/industries/medical-devices">> = Specific
+  const handler = {} as typeof import("../../app/industries/medical-devices/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/industries/oil-gas/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/industries/oil-gas">> = Specific
+  const handler = {} as typeof import("../../app/industries/oil-gas/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/industries/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/industries">> = Specific
+  const handler = {} as typeof import("../../app/industries/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

@@ -12,21 +12,21 @@ const cards = [
     description:
       "Precision-cut foam protection solutions designed for industrial equipment, electronics, medical devices, and tools.",
     image: "/images/showcase-foam-inserts.webp?v=2",
-    href: "#foam-inserts"
+    href: "/foam-inserts"
   },
   {
     title: "Plastic Machining",
     description:
       "Custom CNC-machined plastic components built for industrial, aerospace, and manufacturing applications.",
     image: "/images/showcase-plastic-machining.webp?v=2",
-    href: "#plastic-machining"
+    href: "/plastic-machining"
   },
   {
     title: "Engineering & Planning",
     description:
       "Collaborative design, CAD planning, and fabrication workflows focused on precision and production quality.",
     image: "/images/showcase-engineering-planning.webp?v=2",
-    href: "#process"
+    href: "/contact"
   }
 ];
 

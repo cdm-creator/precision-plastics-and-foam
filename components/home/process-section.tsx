@@ -124,7 +124,7 @@ export function ProcessSection() {
           </span>
           <span className={styles.ctaText}>Ready to start your project?</span>
           <span className={styles.divider} />
-          <Link href="#contact" className={styles.ctaLink}>
+          <Link href="/contact" className={styles.ctaLink}>
             Request a Quote
             <ArrowRight size={18} />
           </Link>

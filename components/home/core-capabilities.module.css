@@ -223,10 +223,23 @@
     padding-bottom: 13.5rem;
   }
 
+  .headingTitle {
+    font-size: calc(var(--text-h2) - 0.125rem);
+  }
+
+  .headingText {
+    font-size: calc(var(--text-body) - 1px);
+  }
+
   .cta {
+    bottom: -13% !important;
     grid-template-columns: 1fr;
     padding: 1.5rem;
     text-align: center;
     justify-items: center;
+  }
+
+  .ctaText {
+    font-size: calc(clamp(1.45rem, 2vw, 1.8rem) - 1px);
   }
 }
