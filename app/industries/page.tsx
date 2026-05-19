@@ -250,7 +250,7 @@ export default function IndustriesPage() {
             transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <Image
-              src="/images/industries-hero-factory.png"
+              src="/images/industries-hero-factory.webp"
               alt="Industrial factory floor with engineer reviewing operations on a tablet"
               fill
               priority

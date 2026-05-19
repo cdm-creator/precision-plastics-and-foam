@@ -45,6 +45,24 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../app/blogs/[slug]/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/blogs/[slug]">> = Specific
+  const handler = {} as typeof import("../../app/blogs/[slug]/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/blogs/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/blogs">> = Specific
+  const handler = {} as typeof import("../../app/blogs/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/contact/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/contact">> = Specific
@@ -139,6 +157,33 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 {
   type __IsExpected<Specific extends AppPageConfig<"/plastic-machining">> = Specific
   const handler = {} as typeof import("../../app/plastic-machining/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/privacy-policy/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/privacy-policy">> = Specific
+  const handler = {} as typeof import("../../app/privacy-policy/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/terms-conditions-of-sale/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/terms-conditions-of-sale">> = Specific
+  const handler = {} as typeof import("../../app/terms-conditions-of-sale/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/thank-you/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/thank-you">> = Specific
+  const handler = {} as typeof import("../../app/thank-you/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

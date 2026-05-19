@@ -12,6 +12,7 @@ const navItems = [
   { label: "Foam Inserts", href: "/foam-inserts" },
   { label: "Plastic Machining", href: "/plastic-machining" },
   { label: "Industries", href: "/industries" },
+  { label: "Blogs", href: "/blogs" },
   { label: "About", href: "/about" },
   { label: "Contact Us", href: "/contact" }
 ];
@@ -32,13 +33,13 @@ const industryCards = [
   {
     title: "View Services",
     href: "/plastic-machining",
-    image: "/images/mega-services-cnc.jpg",
+    image: "/images/mega-services-cnc.webp",
     alt: "CNC machining tool cutting a precision metal part"
   },
   {
     title: "Contact Us",
     href: "/contact",
-    image: "/images/mega-contact.jpg",
+    image: "/images/mega-contact.webp",
     alt: "Manufacturing consultants walking through a facility with a laptop"
   }
 ];
@@ -97,12 +98,12 @@ export function Header() {
       className={`sticky top-0 z-50 border-b transition-all duration-300 ${
         scrolled
           ? "border-system bg-white/95 shadow-card backdrop-blur"
-          : "border-transparent bg-white/80 backdrop-blur"
+          : "border-[rgba(15,23,42,0.08)] bg-white/80 backdrop-blur"
       } relative`}
     >
       <nav
         aria-label="Primary navigation"
-        className="container-width flex min-h-24 items-center justify-between py-4"
+        className="container-width flex min-h-[4.5rem] items-center justify-between py-2 xl:min-h-24 xl:py-4"
       >
         <Link
           href="/"
@@ -115,11 +116,11 @@ export function Header() {
             width={280}
             height={75}
             priority
-            className="h-20 w-auto object-contain"
+            className="h-12 w-auto object-contain sm:h-12 xl:h-20"
           />
         </Link>
 
-        <div className="hidden items-center gap-7 lg:flex">
+        <div className="hidden items-center gap-6 xl:flex 2xl:gap-7">
           {navItems.map((item) =>
             item.label === "Industries" ? (
               <div
@@ -150,7 +151,7 @@ export function Header() {
                       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                       onMouseEnter={openMegaMenu}
                       onMouseLeave={scheduleMegaMenuClose}
-                      className="fixed left-1/2 top-24 z-50 hidden w-[min(92vw,64rem)] lg:block"
+                      className="fixed left-1/2 top-24 z-50 hidden w-[min(92vw,64rem)] xl:block"
                     >
                       <div className="rounded-b-industrial border border-t-0 border-system bg-card p-6 shadow-industrial">
                         <div className="grid grid-cols-[32%_64%] gap-8">
@@ -193,7 +194,7 @@ export function Header() {
                                   className="object-cover transition duration-500 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-industrial-navy)]/80 via-[var(--color-industrial-navy)]/25 to-transparent" />
-                                <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-[var(--color-industrial-navy)] shadow-card transition group-hover:text-accent">
+                                <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-[var(--color-industrial-navy)] shadow-card transition group-hover:text-accent">
                                   {card.title}
                                   <ArrowUpRight size={15} />
                                 </span>
@@ -220,7 +221,7 @@ export function Header() {
           )}
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <Link
             href="/contact"
             onMouseEnter={closeMegaMenu}
@@ -236,7 +237,7 @@ export function Header() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
-          className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-control border border-system bg-card text-midnight transition hover:border-steel hover:text-technical lg:hidden"
+          className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-control border border-system bg-card text-midnight transition hover:border-steel hover:text-technical xl:hidden"
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -250,7 +251,7 @@ export function Header() {
             exit="hidden"
             variants={drawerVariants}
             transition={motionTimings.drawer}
-            className="border-t border-system bg-card px-5 pb-6 shadow-elevated lg:hidden"
+            className="border-t border-system bg-card px-5 pb-6 shadow-elevated xl:hidden"
           >
             <div className="mx-auto flex max-w-7xl flex-col py-3">
               {navItems.map((item) =>
