@@ -26,7 +26,7 @@ const defaultTestimonials: Testimonial[] = [
     name: "Robert J. Adams",
     role: "Procurement Lead",
     image:
-      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=240&h=240",
+      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&fit=crop&fm=webp&w=240&h=240",
     imageAlt: "Robert J. Adams"
   },
   {
@@ -35,7 +35,7 @@ const defaultTestimonials: Testimonial[] = [
     name: "Anita D. Costin",
     role: "Operations Manager",
     image:
-      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=240&h=240",
+      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&fit=crop&fm=webp&w=240&h=240",
     imageAlt: "Anita D. Costin"
   },
   {
@@ -44,13 +44,13 @@ const defaultTestimonials: Testimonial[] = [
     name: "Wilbur N. Shore",
     role: "Manufacturing Director",
     image:
-      "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=240&h=240",
+      "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&fit=crop&fm=webp&w=240&h=240",
     imageAlt: "Wilbur N. Shore"
   }
 ];
 
 export function TestimonialsSection({
-  heading = "Reviews from our awesome clients",
+  heading = "Reviews From Our Awesome Clients",
   testimonials = defaultTestimonials,
   backgroundVariant = "white"
 }: TestimonialsSectionProps) {
@@ -64,7 +64,7 @@ export function TestimonialsSection({
   return (
     <section className={`relative isolate overflow-hidden py-16 sm:py-24 lg:py-20 ${sectionBackground}`}>
       <Image
-        src="/images/testimonials-map.png"
+        src="/images/testimonials-map.webp"
         alt=""
         fill
         sizes="100vw"

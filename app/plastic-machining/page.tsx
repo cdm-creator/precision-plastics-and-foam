@@ -3,6 +3,7 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HeroBottomDivider } from "@/components/HeroBottomDivider";
+import { FaqSection } from "@/components/home/faq-section";
 import { TopBar } from "@/components/layout/top-bar";
 import { fadeUpVariants, heroMediaVariants, motionTimings } from "@/lib/motion";
 import { motion, useReducedMotion } from "framer-motion";
@@ -365,6 +366,8 @@ export default function PlasticMachiningPage() {
             ))}
           </div>
         </section>
+
+        <FaqSection />
 
         <section id="contact" className={styles.cta}>
           <div className={styles.ctaImage}>

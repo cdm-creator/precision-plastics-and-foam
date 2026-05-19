@@ -972,10 +972,15 @@ a {
   }
 
   @media (max-width: 1023px) {
+    .hero-slider,
+    .hero-slider__slide {
+      min-height: 38rem;
+    }
+
     .hero-slider__content {
-      min-height: 42rem;
-      padding-top: 4rem;
-      padding-bottom: 10rem;
+      min-height: 38rem;
+      padding-top: 3.5rem;
+      padding-bottom: 8rem;
     }
 
     .hero-slider__image {

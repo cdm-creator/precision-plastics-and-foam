@@ -1,10 +1,14 @@
 node_modules
 .next
+.next/
 .env
 .env.local
 .env.*.local
 dist
 coverage
+artifacts
+artifacts/
+tsconfig.tsbuildinfo
 .DS_Store
 *.log
 .vscode
