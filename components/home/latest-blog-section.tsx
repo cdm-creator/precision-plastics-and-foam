@@ -49,7 +49,7 @@ export function LatestBlogSection() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="bg-[radial-gradient(circle_at_50%_12%,rgba(37,99,235,0.05),transparent_30rem),var(--color-soft-white)] py-24">
+    <section className="bg-[radial-gradient(circle_at_50%_12%,rgba(37,99,235,0.05),transparent_30rem),var(--color-soft-white)] py-16">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
         <motion.div
           initial={reduceMotion ? false : "hidden"}
