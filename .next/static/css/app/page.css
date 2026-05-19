@@ -601,7 +601,7 @@
   }
 
   .core-capabilities_headingText__2_TDT {
-    font-size: calc(var(--text-body) - 1px);
+    font-size: calc(var(--text-body));
   }
 
   .core-capabilities_cta__tEMIX {

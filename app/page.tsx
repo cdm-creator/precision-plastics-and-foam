@@ -150,7 +150,7 @@ export default function Home() {
 
         <CoreCapabilities />
 
-        <section id="foam-inserts" className="bg-white pt-40 pb-12 lg:pb-14">
+        <section id="foam-inserts" className="bg-white pt-20 pb-12 lg:pb-14">
           <div className="container-width grid gap-10 lg:grid-cols-[0.48fr_0.52fr] lg:items-stretch lg:gap-16">
             <FadeIn className="h-full">
               <div className="relative h-full min-h-[24rem] overflow-hidden rounded-industrial shadow-industrial">

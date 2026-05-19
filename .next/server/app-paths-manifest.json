@@ -1,8 +1,3 @@
 {
-  "/blogs/page": "app/blogs/page.js",
-  "/page": "app/page.js",
-  "/blogs/[slug]/page": "app/blogs/[slug]/page.js",
-  "/foam-inserts/page": "app/foam-inserts/page.js",
-  "/plastic-machining/page": "app/plastic-machining/page.js",
-  "/contact/page": "app/contact/page.js"
+  "/page": "app/page.js"
 }

@@ -1815,11 +1815,11 @@ p,
 .min-h-\[4\.5rem\] {
   min-height: 4.5rem;
 }
-.min-h-\[560px\] {
-  min-height: 560px;
-}
 .min-h-\[500px\] {
   min-height: 500px;
+}
+.min-h-\[560px\] {
+  min-height: 560px;
 }
 .w-0\.5 {
   width: 0.125rem;
@@ -2506,6 +2506,9 @@ p,
 .pb-12 {
   padding-bottom: 3rem;
 }
+.pb-14 {
+  padding-bottom: 3.5rem;
+}
 .pb-16 {
   padding-bottom: 4rem;
 }
@@ -2539,14 +2542,14 @@ p,
 .pt-0 {
   padding-top: 0px;
 }
+.pt-20 {
+  padding-top: 5rem;
+}
 .pt-24 {
   padding-top: 6rem;
 }
 .pt-4 {
   padding-top: 1rem;
-}
-.pt-40 {
-  padding-top: 10rem;
 }
 .pt-5 {
   padding-top: 1.25rem;
@@ -2556,9 +2559,6 @@ p,
 }
 .pt-8 {
   padding-top: 2rem;
-}
-.pb-14 {
-  padding-bottom: 3.5rem;
 }
 .text-left {
   text-align: left;
@@ -2589,8 +2589,11 @@ p,
 .text-\[11px\] {
   font-size: 11px;
 }
-.text-\[16px\] {
-  font-size: 16px;
+.text-\[13px\] {
+  font-size: 13px;
+}
+.text-\[15px\] {
+  font-size: 15px;
 }
 .text-\[1rem\] {
   font-size: 1rem;
@@ -2636,11 +2639,11 @@ p,
   font-size: 0.75rem;
   line-height: 1rem;
 }
-.text-\[13px\] {
-  font-size: 13px;
+.text-\[14px\] {
+  font-size: 14px;
 }
-.text-\[15px\] {
-  font-size: 15px;
+.text-\[16px\] {
+  font-size: 16px;
 }
 .font-bold {
   font-weight: 700;
@@ -2660,6 +2663,9 @@ p,
 .leading-5 {
   line-height: 1.25rem;
 }
+.leading-6 {
+  line-height: 1.5rem;
+}
 .leading-7 {
   line-height: 1.75rem;
 }
@@ -2677,9 +2683,6 @@ p,
 }
 .leading-tight {
   line-height: 1.25;
-}
-.leading-6 {
-  line-height: 1.5rem;
 }
 .tracking-\[0\.12em\] {
   letter-spacing: 0.12em;
@@ -3327,6 +3330,10 @@ a {
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
+  .sm\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
   .sm\:pb-10 {
     padding-bottom: 2.5rem;
   }
@@ -3335,6 +3342,9 @@ a {
   }
   .sm\:text-\[1\.75rem\] {
     font-size: 1.75rem;
+  }
+  .sm\:text-\[15px\] {
+    font-size: 15px;
   }
   .sm\:text-\[2\.1rem\] {
     font-size: 2.1rem;
@@ -3354,10 +3364,6 @@ a {
   .sm\:text-\[48px\] {
     font-size: 48px;
   }
-  .sm\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
   .sm\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -3365,16 +3371,6 @@ a {
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
-  }
-  .sm\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-  .sm\:text-\[15px\] {
-    font-size: 15px;
-  }
-  .sm\:leading-8 {
-    line-height: 2rem;
   }
   .sm\:leading-7 {
     line-height: 1.75rem;
@@ -3397,11 +3393,11 @@ a {
   .md\:h-40 {
     height: 10rem;
   }
-  .md\:min-h-\[640px\] {
-    min-height: 640px;
-  }
   .md\:min-h-\[560px\] {
     min-height: 560px;
+  }
+  .md\:min-h-\[640px\] {
+    min-height: 640px;
   }
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3468,14 +3464,14 @@ a {
   .lg\:min-h-64 {
     min-height: 16rem;
   }
+  .lg\:min-h-\[576px\] {
+    min-height: 576px;
+  }
   .lg\:min-h-\[720px\] {
     min-height: 720px;
   }
   .lg\:min-h-\[760px\] {
     min-height: 760px;
-  }
-  .lg\:min-h-\[576px\] {
-    min-height: 576px;
   }
   .lg\:w-\[25rem\] {
     width: 25rem;

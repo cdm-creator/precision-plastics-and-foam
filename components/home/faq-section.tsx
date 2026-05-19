@@ -135,7 +135,7 @@ export function FaqSection({ className }: { className?: string }) {
                   aria-controls={`faq-answer-${index}`}
                   onClick={() => setOpenIndex(isOpen ? -1 : index)}
                 >
-                  <span className="font-heading text-[15px] font-semibold leading-snug text-[var(--color-industrial-navy)] sm:text-lg">
+                  <span className="font-heading text-[16px] font-semibold leading-snug text-[var(--color-industrial-navy)] sm:text-lg">
                     {faq.question}
                   </span>
                   <Icon className="h-6 w-6 shrink-0 text-[var(--color-precision-blue)]" strokeWidth={2.4} />
@@ -152,7 +152,7 @@ export function FaqSection({ className }: { className?: string }) {
                       transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="body px-6 pb-7 pt-0 text-[13px] leading-7 sm:px-8 sm:text-[15px]">
+                      <p className="body px-6 pb-7 pt-0 text-[14px] leading-7 sm:px-8 sm:text-[15px]">
                         {faq.answer}
                       </p>
                     </motion.div>
