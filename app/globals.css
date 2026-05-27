@@ -572,8 +572,8 @@ a {
     bottom: 0;
     height: 3px;
     background: var(--color-industrial-orange);
-    opacity: 0;
-    transform: scaleX(0.35);
+    opacity: 1;
+    transform: scaleX(1);
     transform-origin: left;
     transition:
       opacity var(--transition-slow) var(--ease-industrial),
@@ -616,8 +616,8 @@ a {
     height: 72%;
     background:
       linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.72) 38%, rgba(2, 6, 23, 0.96) 100%);
-    opacity: 0;
-    transform: translateY(36%);
+    opacity: 1;
+    transform: translateY(0);
     transition:
       opacity var(--transition-slow) var(--ease-industrial),
       transform var(--transition-slow) var(--ease-industrial);
@@ -634,7 +634,7 @@ a {
     inset-inline: 0;
     bottom: 0;
     padding: 2rem;
-    transform: translateY(4.25rem);
+    transform: translateY(0);
     transition: transform var(--transition-slow) var(--ease-industrial);
   }
 
@@ -661,8 +661,8 @@ a {
     font-size: var(--text-small);
     line-height: var(--leading-small);
     color: var(--color-on-dark-muted);
-    opacity: 0;
-    transform: translateY(0.75rem);
+    opacity: 1;
+    transform: translateY(0);
     transition:
       opacity var(--transition-slow) var(--ease-industrial),
       transform var(--transition-slow) var(--ease-industrial);
@@ -679,8 +679,8 @@ a {
     font-size: var(--text-small);
     font-weight: var(--weight-medium);
     color: var(--color-industrial-orange);
-    opacity: 0;
-    transform: translateY(0.75rem);
+    opacity: 1;
+    transform: translateY(0);
     transition:
       opacity var(--transition-slow) var(--ease-industrial),
       transform var(--transition-slow) var(--ease-industrial),
@@ -714,13 +714,32 @@ a {
   }
 
   @media (max-width: 767px) {
+    .industrial-showcase {
+      padding-block: 3rem;
+    }
+
+    .industrial-showcase__header {
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
     .showcase-card {
-      min-height: 26rem;
+      min-height: 25rem;
     }
 
     .showcase-card__content {
-      padding: 1.5rem;
-      transform: translateY(3.75rem);
+      padding: 1.25rem;
+      transform: translateY(0);
+    }
+
+    .showcase-card__description {
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      line-height: 1.55;
+    }
+
+    .showcase-card__link {
+      margin-top: 0.875rem;
     }
   }
 

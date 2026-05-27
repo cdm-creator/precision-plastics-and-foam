@@ -8,15 +8,14 @@ import { fadeUpVariants, heroMediaVariants, motionTimings } from "@/lib/motion";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
+  ChevronDown,
   Clock,
   Facebook,
   Instagram,
   Linkedin,
-  Lock,
   Mail,
   MapPin,
-  Phone,
-  Send
+  Phone
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,20 +23,20 @@ import Link from "next/link";
 const contactCards = [
   {
     title: "Phone",
-    value: "+1 (555) 123-4567",
+    value: "281-377-9292",
     detail: "Mon - Fri: 8:00 AM - 5:00 PM",
     icon: Phone
   },
   {
     title: "Email",
-    value: "info@precisionplastics.com",
+    value: "info@ppfsales.com",
     detail: "We reply within 24 hours",
     icon: Mail
   },
   {
     title: "Address",
-    value: "123 Precision Drive",
-    detail: "Elkhart, IN 46516, USA",
+    value: "800 Marion Pugh Dr",
+    detail: "77840, TX",
     icon: MapPin
   },
   {
@@ -49,17 +48,25 @@ const contactCards = [
 ];
 
 const fields = [
-  { label: "Full Name *", type: "text", name: "name" },
-  { label: "Email Address *", type: "email", name: "email" },
-  { label: "Phone Number *", type: "tel", name: "phone" },
-  { label: "Subject *", type: "text", name: "subject" }
+  { label: "First Name *", type: "text", name: "firstName", placeholder: "First Name", required: true },
+  { label: "Last Name *", type: "text", name: "lastName", placeholder: "Last Name", required: true },
+  { label: "Email *", type: "email", name: "email", placeholder: "Email", required: true },
+  { label: "Phone *", type: "tel", name: "phone", placeholder: "Phone", required: true }
+];
+
+const requestOptions = [
+  "Custom Foam Inserts",
+  "Plastic Machining",
+  "Protective Packaging",
+  "Material Selection Support",
+  "Other"
 ];
 
 const socials = [
   { label: "Facebook", icon: Facebook, href: "https://www.facebook.com" },
   { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com" },
   { label: "Instagram", icon: Instagram, href: "https://www.instagram.com" },
-  { label: "Email", icon: Mail, href: "mailto:info@precisionplastics.com" }
+  { label: "Email", icon: Mail, href: "mailto:info@ppfsales.com" }
 ];
 
 function FadeIn({
@@ -196,29 +203,107 @@ export default function ContactPage() {
                       <input
                         type={field.type}
                         name={field.name}
-                        className="focus-ring h-12 rounded-control border border-system bg-white px-4 text-muted-strong outline-none transition focus:border-steel"
+                        placeholder={field.placeholder}
+                        required={field.required}
+                        className="h-12 rounded-control border border-system bg-white px-4 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
                       />
                     </label>
                   ))}
                 </div>
                 <label className="grid gap-2">
                   <span className="small-text font-semibold text-muted-strong">
-                    Message *
+                    Company / Organization
                   </span>
-                  <textarea
-                    name="message"
-                    rows={7}
-                    className="focus-ring min-h-44 resize-y rounded-control border border-system bg-white px-4 py-3 text-muted-strong outline-none transition focus:border-steel"
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Company / Organization"
+                    className="h-12 rounded-control border border-system bg-white px-4 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
                   />
                 </label>
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                  <button type="submit" className="btn-primary w-fit whitespace-nowrap">
-                    Send Message
-                    <Send size={17} />
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <label className="grid gap-2">
+                    <span className="small-text font-semibold text-muted-strong">
+                      What are you looking for? *
+                    </span>
+                    <span className="relative block">
+                      <select
+                        name="lookingFor"
+                        required
+                        defaultValue=""
+                        className="h-12 w-full appearance-none rounded-control border border-system bg-white px-4 pr-11 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
+                      >
+                        <option value="" disabled>
+                          Select Below
+                        </option>
+                        {requestOptions.map((option) => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                      <ChevronDown
+                        aria-hidden="true"
+                        size={17}
+                        strokeWidth={2.2}
+                        className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-muted-strong"
+                      />
+                    </span>
+                  </label>
+                  <label className="grid gap-2">
+                    <span className="small-text font-semibold text-muted-strong">
+                      How many do you need? *
+                    </span>
+                    <input
+                      type="number"
+                      name="quantity"
+                      placeholder="Number of Pieces Needed"
+                      required
+                      min="1"
+                      className="h-12 rounded-control border border-system bg-white px-4 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
+                    />
+                  </label>
+                </div>
+                <label className="grid gap-2">
+                  <span className="small-text font-semibold text-muted-strong">
+                    What type of equipment are you going to store in the case/foam?
+                  </span>
+                  <textarea
+                    name="equipmentDetails"
+                    placeholder="Provide as much detail as possible."
+                    rows={2}
+                    className="min-h-16 resize-y rounded-control border border-system bg-white px-4 py-3 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
+                  />
+                </label>
+                <label className="flex items-start gap-3 text-xs font-medium leading-4 text-muted">
+                  <input
+                    type="checkbox"
+                    name="smsConsent"
+                    className="mt-1 h-4 w-4 shrink-0 rounded border-system text-technical focus:ring-technical"
+                  />
+                  <span>
+                    I Consent to Receive SMS Notifications, Alerts & Occasional
+                    Marketing Communication from company. Message frequency
+                    varies. Message & data rates may apply. Text HELP to (405)
+                    500-2423 for assistance. You can reply STOP to unsubscribe
+                    at any time.
+                  </span>
+                </label>
+                <div className="flex flex-col gap-6">
+                  <button
+                    type="submit"
+                    className="focus-ring flex h-12 w-full items-center justify-center rounded-control bg-steel px-4 text-center font-semibold text-white transition hover:bg-blue-700"
+                  >
+                    Submit Your Request
                   </button>
-                  <p className="small-text flex items-center gap-2">
-                    <Lock size={16} className="text-technical" />
-                    Your information is secure and will never be shared.
+                  <p className="text-center text-xs font-medium leading-4">
+                    <Link href="/privacy-policy" className="text-steel underline transition hover:text-blue-700">
+                      Privacy Policy
+                    </Link>
+                    <span className="mx-2 text-muted">|</span>
+                    <Link href="/terms-conditions-of-sale" className="text-steel underline transition hover:text-blue-700">
+                      Terms of Service
+                    </Link>
                   </p>
                 </div>
               </form>
@@ -228,7 +313,7 @@ export default function ContactPage() {
               <div className="industrial-card overflow-hidden bg-card">
                 <iframe
                   title="Precision Plastics & Foam map"
-                  src="https://www.google.com/maps?q=Elkhart,%20IN%2046516,%20USA&output=embed"
+                  src="https://www.google.com/maps?q=800%20Marion%20Pugh%20Dr%2C%2077840%2C%20TX&output=embed"
                   className="h-full min-h-[330px] w-full border-0 sm:min-h-[350px]"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -307,8 +392,8 @@ export default function ContactPage() {
               <h2 className="h2">What We&apos;re About</h2>
               <div className="body mt-6 grid gap-5">
                 <p>
-                  Precision Plastics & Foam is located in Elkhart, IN and
-                  specializes in precision plastic machining and custom foam
+                  Precision Plastics & Foam is located at 800 Marion Pugh Dr,
+                  77840, TX and specializes in precision plastic machining and custom foam
                   solutions for a wide range of industries. Our process ensures
                   we deliver high-quality parts with accuracy, consistency, and
                   on-time results.

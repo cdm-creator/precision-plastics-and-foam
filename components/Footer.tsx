@@ -133,15 +133,15 @@ export function Footer() {
           <ul className="small-text dark-muted mt-4 space-y-4">
             <li className="flex gap-3">
               <Phone className="mt-0.5 h-4 w-4 text-accent" />
-              <span>(555) 014-8290</span>
+              <span>281-377-9292</span>
             </li>
             <li className="flex gap-3">
               <Mail className="mt-0.5 h-4 w-4 text-accent" />
-              <span>quotes@precisionplasticsfoam.com</span>
+              <span>info@ppfsales.com</span>
             </li>
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-4 w-4 text-accent" />
-              <span>Industrial address placeholder</span>
+              <span>800 Marion Pugh Dr, 77840, TX</span>
             </li>
           </ul>
         </div>

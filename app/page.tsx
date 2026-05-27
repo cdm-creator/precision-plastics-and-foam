@@ -7,6 +7,7 @@ import { ApplicationsSlider } from "@/components/home/applications-slider";
 import { CoreCapabilities } from "@/components/home/core-capabilities";
 import { FaqSection } from "@/components/home/faq-section";
 import { FinalCtaBanner } from "@/components/home/final-cta-banner";
+import { GallerySection } from "@/components/home/GallerySection";
 import { HeroSlider } from "@/components/home/hero-slider";
 import { IndustrialShowcase } from "@/components/home/industrial-showcase";
 import { LatestBlogSection } from "@/components/home/latest-blog-section";
@@ -148,9 +149,11 @@ export default function Home() {
 
         <IndustrialShowcase />
 
+        <GallerySection />
+
         <CoreCapabilities />
 
-        <section id="foam-inserts" className="bg-white pt-20 pb-12 lg:pb-14">
+        <section id="foam-inserts" className="bg-white pt-20 pb-12 lg:pb-14 lg:pt-32">
           <div className="container-width grid gap-10 lg:grid-cols-[0.48fr_0.52fr] lg:items-stretch lg:gap-16">
             <FadeIn className="h-full">
               <div className="relative h-full min-h-[24rem] overflow-hidden rounded-industrial shadow-industrial">

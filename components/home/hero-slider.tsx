@@ -10,7 +10,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const slides = [
   {
@@ -26,20 +26,6 @@ const slides = [
     href: "/contact",
     image: "/images/hero-industrial-machinery.webp",
     imageAlt: "CNC machining precision industrial component"
-  },
-  {
-    eyebrow: "Custom Foam Inserts",
-    title: "Engineered Foam Inserts Built For Protection & Organization",
-    text: "Custom-cut industrial foam inserts designed to protect tools, electronics, medical devices, equipment, and sensitive products during transport, storage, and handling.",
-    features: [
-      "Precision-fit cavities",
-      "Shock & vibration protection",
-      "Custom packaging solutions"
-    ],
-    cta: "Explore Foam Solutions",
-    href: "/foam-inserts",
-    image: "/images/hero-foam-production.webp",
-    imageAlt: "Industrial protective packaging and foam insert preparation"
   }
 ];
 
@@ -58,13 +44,6 @@ export function HeroSlider() {
     dragFree: false,
     duration: 58
   });
-
-  const scrollTo = useCallback(
-    (index: number) => {
-      emblaApi?.scrollTo(index);
-    },
-    [emblaApi]
-  );
 
   useEffect(() => {
     if (!emblaApi) {
@@ -158,21 +137,6 @@ export function HeroSlider() {
             </article>
           ))}
         </div>
-      </div>
-
-      <div className="hero-slider__pagination" aria-label="Hero slider pagination">
-        {slides.map((slide, index) => (
-          <button
-            type="button"
-            key={slide.eyebrow}
-            onClick={() => scrollTo(index)}
-            aria-label={`Show ${slide.eyebrow} slide`}
-            aria-current={selectedIndex === index}
-            className="hero-slider__dot"
-          >
-            <span>{String(index + 1).padStart(2, "0")}</span>
-          </button>
-        ))}
       </div>
 
       <div className="hero-slider__strip">
