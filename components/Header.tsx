@@ -11,9 +11,8 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Foam Inserts", href: "/foam-inserts" },
   { label: "Plastic Machining", href: "/plastic-machining" },
+  { label: "Carbon Fiber Machining", href: "/carbon-fiber-machining" },
   { label: "Industries", href: "/industries" },
-  { label: "Blogs", href: "/blogs" },
-  { label: "About", href: "/about" },
   { label: "Contact Us", href: "/contact" }
 ];
 

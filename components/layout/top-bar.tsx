@@ -14,18 +14,18 @@ import Link from "next/link";
 
 const contactItems = [
   {
-    label: "(+1) 212-946-2707",
-    href: "tel:+12129462707",
+    label: "281-377-9292",
+    href: "tel:+12813779292",
     icon: Phone
   },
   {
-    label: "info@precisionplasticsfoam.com",
-    href: "mailto:info@precisionplasticsfoam.com",
+    label: "info@ppfsales.com",
+    href: "mailto:info@ppfsales.com",
     icon: Mail
   },
   {
-    label: "112 W 34th St, New York",
-    href: "https://maps.google.com/?q=112%20W%2034th%20St%2C%20New%20York",
+    label: "800 Marion Pugh Dr, 77840, TX",
+    href: "https://maps.google.com/?q=800%20Marion%20Pugh%20Dr%2C%2077840%2C%20TX",
     icon: MapPin,
     hideOnMobile: true
   }

@@ -63,6 +63,15 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../app/carbon-fiber-machining/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/carbon-fiber-machining">> = Specific
+  const handler = {} as typeof import("../../app/carbon-fiber-machining/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/contact/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/contact">> = Specific

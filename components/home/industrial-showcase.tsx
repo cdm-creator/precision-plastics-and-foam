@@ -10,27 +10,35 @@ const cards = [
   {
     title: "Custom Foam Inserts",
     description:
-      "Precision-cut foam protection solutions designed for industrial equipment, electronics, medical devices, and tools.",
-    image: "/images/showcase-foam-inserts.webp?v=2",
+      "Custom foam inserts designed for secure protection, organization, and durability across industrial applications.",
+    image: "/images/showcase-custom-foam-inserts-case.webp",
     href: "/foam-inserts"
   },
   {
-    title: "Plastic Machining",
+    title: "Plastic Fabrication",
     description:
-      "Custom CNC-machined plastic components built for industrial, aerospace, and manufacturing applications.",
-    image: "/images/showcase-plastic-machining.webp?v=2",
+      "Precision plastic fabrication solutions built for custom parts, prototypes, and production requirements.",
+    image: "/images/showcase-cnc-machining-new.webp",
     href: "/plastic-machining"
   },
   {
-    title: "Engineering & Planning",
+    title: "Carbon Fiber Machining",
     description:
-      "Collaborative design, CAD planning, and fabrication workflows focused on precision and production quality.",
-    image: "/images/showcase-engineering-planning.webp?v=2",
-    href: "/contact"
+      "We provide precision carbon fiber machining solutions for lightweight, high-performance, and structurally durable components.",
+    image: "/images/showcase-carbon-fiber-machining.webp",
+    href: "/carbon-fiber-machining"
   }
 ];
 
-export function IndustrialShowcase() {
+export function IndustrialShowcase({
+  eyebrow = "Precision Engineered Solutions",
+  title = "Precision Plastic Fabrication, Custom Foam Inserts, & Carbon Fiber Machining",
+  intro = "We specialize in precision CNC machining of plastics, custom foam inserts, and high-performance carbon fiber components. From prototype to production, we can deliver it with precision.  We help our customers bring complex designs to life with quality and speed"
+}: {
+  eyebrow?: string;
+  intro?: string;
+  title?: string;
+}) {
   const reduceMotion = useReducedMotion();
 
   return (
@@ -44,10 +52,9 @@ export function IndustrialShowcase() {
             variants={fadeUpVariants}
             transition={motionTimings.fadeUp}
           >
-            <p className="eyebrow">Precision Engineered Solutions</p>
+            <p className="eyebrow">{eyebrow}</p>
             <h2 className="h2 industrial-showcase__title">
-              High standards of <strong>manufacturing</strong> and{" "}
-              <strong>precision fabrication</strong>
+              {title}
             </h2>
           </motion.div>
 
@@ -59,9 +66,7 @@ export function IndustrialShowcase() {
             transition={{ ...motionTimings.fadeUp, delay: 0.08 }}
             className="body industrial-showcase__intro"
           >
-            We deliver custom foam inserts and plastic machining solutions with
-            high attention to detail, industrial-grade materials, and dependable
-            production quality.
+            {intro}
           </motion.p>
         </div>
 

@@ -16,8 +16,8 @@ const industries = [
     description:
       "High-performance components that meet strict industry standards for aerospace and defense applications.",
     href: "/industries/aerospace-defense",
-    image: "/images/plastic-machining-hero.webp",
-    imageAlt: "CNC machining a precision component for aerospace and defense applications"
+    image: "/images/industry-aerospace-defense-case.webp",
+    imageAlt: "Open protective equipment case for aerospace and defense applications"
   },
   {
     number: "02",

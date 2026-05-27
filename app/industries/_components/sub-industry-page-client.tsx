@@ -562,7 +562,7 @@ export function SubIndustryPageClient({ slug }: { slug: string }) {
                 <div>
                   <p className="small-text">Talk to an Expert</p>
                   <p className="font-heading text-lg font-semibold text-midnight">
-                    (555) 123-4567
+                    281-377-9292
                   </p>
                 </div>
               </div>

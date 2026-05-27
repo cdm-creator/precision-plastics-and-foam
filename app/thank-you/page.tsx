@@ -206,7 +206,7 @@ export default function ThankYouPage() {
                   Back to Home
                   <ArrowRight size={17} />
                 </Link>
-                <Link href="tel:+15550148290" className="btn-primary">
+                <Link href="tel:+12813779292" className="btn-primary">
                   Call Now
                   <Phone size={17} />
                 </Link>
