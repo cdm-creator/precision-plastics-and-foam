@@ -24,8 +24,8 @@ const contactItems = [
     icon: Mail
   },
   {
-    label: "800 Marion Pugh Dr, 77840, TX",
-    href: "https://maps.google.com/?q=800%20Marion%20Pugh%20Dr%2C%2077840%2C%20TX",
+    label: "800 Marion Pugh Dr, 77840, TX, USA",
+    href: "https://maps.google.com/?q=800%20Marion%20Pugh%20Dr%2C%2077840%2C%20TX%2C%20USA",
     icon: MapPin,
     hideOnMobile: true
   }
