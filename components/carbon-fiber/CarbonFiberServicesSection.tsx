@@ -5,7 +5,15 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const services = [
+type ServiceCard = {
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  href: string;
+};
+
+const defaultServices: ServiceCard[] = [
   {
     title: "Carbon Fiber Machining",
     description:
@@ -32,24 +40,28 @@ const services = [
   }
 ];
 
-export function CarbonFiberServicesSection() {
+type CarbonFiberServicesSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  services?: ServiceCard[];
+};
+
+export function CarbonFiberServicesSection({
+  eyebrow = "Carbon Fiber Machining and Fabrication",
+  title = "Carbon Fiber Machining and Fabrication",
+  description = "We specialize in precision CNC machining and fabrication of high-performance carbon fiber components. From prototype to production, we deliver lightweight parts with tight tolerances. We help customers turn complex composite designs into durable, accurate components.",
+  services = defaultServices
+}: CarbonFiberServicesSectionProps) {
   return (
-    <section className="bg-white py-14 md:py-20">
+    <section className="bg-white pb-14 pt-10 md:pb-20 md:pt-6">
       <div className="container-width">
-        <div className="mb-12 grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-end">
+        <div className="mx-auto mb-12 max-w-5xl text-center">
           <div>
-            <p className="eyebrow">Carbon Fiber Machining and Fabrication</p>
-            <h2 className="h2 mt-3">
-              Carbon Fiber Machining and Fabrication
-            </h2>
+            <p className="eyebrow">{eyebrow}</p>
+            <h2 className="h2 mt-3">{title}</h2>
           </div>
-          <p className="body">
-            We specialize in precision CNC machining and fabrication of
-            high-performance carbon fiber components. From prototype to
-            production, we deliver lightweight parts with tight tolerances. We
-            help customers turn complex composite designs into durable,
-            accurate components with quality and speed
-          </p>
+          <p className="body mx-auto mt-5">{description}</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
