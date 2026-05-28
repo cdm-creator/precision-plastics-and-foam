@@ -3,8 +3,10 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HeroBottomDivider } from "@/components/HeroBottomDivider";
+import { CarbonFiberServicesSection } from "@/components/carbon-fiber/CarbonFiberServicesSection";
 import { FaqSection } from "@/components/home/faq-section";
 import { FinalCtaBanner } from "@/components/home/final-cta-banner";
+import { GalleryImage, GallerySection } from "@/components/home/GallerySection";
 import { TopBar } from "@/components/layout/top-bar";
 import { SolutionsTabs } from "@/components/solutions-tabs";
 import { fadeUpVariants, heroMediaVariants, motionTimings } from "@/lib/motion";
@@ -33,6 +35,68 @@ const navItems = [
   { label: "Foam Solutions", href: "#foam-solutions" },
   { label: "Applications", href: "#applications" },
   { label: "Foam Types", href: "#foam-types" }
+];
+
+const foamInsertPortfolioImages: GalleryImage[] = [
+  {
+    src: "/images/foam-portfolio-custom-case-layout.webp",
+    alt: "Open hard case with custom cut black foam cavities"
+  },
+  {
+    src: "/images/foam-portfolio-blue-tray-insert.webp",
+    alt: "Blue foam tray insert with multiple precision-cut compartments"
+  },
+  {
+    src: "/images/foam-portfolio-drone-insert.webp",
+    alt: "Drone components protected in a custom black foam insert"
+  },
+  {
+    src: "/images/foam-portfolio-specialist-foam-block.webp",
+    alt: "Specialist black foam block with custom shaped cutouts"
+  },
+  {
+    src: "/images/foam-portfolio-camera-lens-insert.webp",
+    alt: "Camera lenses organized in custom cut foam"
+  },
+  {
+    src: "/images/foam-portfolio-divider-case.webp",
+    alt: "Open hard case with padded divider foam compartments"
+  },
+  {
+    src: "/images/foam-portfolio-device-insert.webp",
+    alt: "Phone and tablet protected in a custom black foam insert"
+  },
+  {
+    src: "/images/foam-portfolio-box-insert.webp",
+    alt: "Black foam insert fitted inside a product box"
+  }
+];
+
+const foamInsertServiceCards = [
+  {
+    title: "Foam Insert Cases",
+    description:
+      "We provide precision foam insert cases for all types of industries, helping protect equipment, tools, electronics, and sensitive products during storage, handling, and transport.",
+    image: "/images/foam-insert-cases.png",
+    imageAlt: "Open protective hard case with custom foam insert compartments",
+    href: "/contact"
+  },
+  {
+    title: "Foam Insert Boxes",
+    description:
+      "We provide custom foam insert boxes for many types of industries. Choose from protective foam options designed to organize products, absorb impact, and support clean presentation.",
+    image: "/images/foam-insert-boxes.png",
+    imageAlt: "Black foam insert box holding a phone and tablet",
+    href: "/contact"
+  },
+  {
+    title: "Custom Cases",
+    description:
+      "We provide precision custom cases with foam interiors built around your product shape, weight, and handling needs for secure storage, transport, and presentation.",
+    image: "/images/custom-foam-cases.webp",
+    imageAlt: "Open custom equipment case with precision-cut foam interior",
+    href: "/contact"
+  }
 ];
 
 const whyFeatures = [
@@ -382,6 +446,18 @@ export default function FoamInsertsPage() {
             </motion.div>
           </div>
         </section>
+
+        <CarbonFiberServicesSection
+          eyebrow="PRECISION FOAM INSERTS"
+          title="Custom Foam Inserts"
+          description="We design and fabricate foam inserts for packaging, storage, and transport needs. From single cases to production runs, we build clean cavities with dependable protection. We help teams organize sensitive products into durable, efficient inserts with quality and speed"
+          services={foamInsertServiceCards}
+        />
+
+        <GallerySection
+          images={foamInsertPortfolioImages}
+          sectionClassName="bg-[radial-gradient(circle_at_50%_12%,rgba(37,99,235,0.05),transparent_30rem),var(--color-soft-white)]"
+        />
 
         <div className={styles.navWrap}>
           <nav className={`container-width ${styles.anchorNav}`} aria-label="Foam inserts page navigation">

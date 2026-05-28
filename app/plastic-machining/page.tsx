@@ -3,7 +3,9 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HeroBottomDivider } from "@/components/HeroBottomDivider";
+import { CarbonFiberServicesSection } from "@/components/carbon-fiber/CarbonFiberServicesSection";
 import { FaqSection } from "@/components/home/faq-section";
+import { GalleryImage, GallerySection } from "@/components/home/GallerySection";
 import { TopBar } from "@/components/layout/top-bar";
 import { fadeUpVariants, heroMediaVariants, motionTimings } from "@/lib/motion";
 import { motion, useReducedMotion } from "framer-motion";
@@ -43,6 +45,68 @@ const capabilities = [
     title: "Quality Assured",
     text: "Rigorous inspection for reliable components.",
     icon: ShieldCheck
+  }
+];
+
+const plasticMachiningPortfolioImages: GalleryImage[] = [
+  {
+    src: "/images/plastic-portfolio-machined-bracket.webp",
+    alt: "Precision machined beige plastic bracket component"
+  },
+  {
+    src: "/images/plastic-portfolio-white-sprocket.webp",
+    alt: "White machined plastic sprocket component"
+  },
+  {
+    src: "/images/plastic-portfolio-machined-bushing.webp",
+    alt: "CNC machining a beige plastic bushing component"
+  },
+  {
+    src: "/images/plastic-portfolio-clear-machined-part.webp",
+    alt: "Clear machined plastic part on a black background"
+  },
+  {
+    src: "/images/plastic-portfolio-cnc-machine.webp",
+    alt: "CNC machine used for plastic machining"
+  },
+  {
+    src: "/images/plastic-portfolio-ultem-printed-part.webp",
+    alt: "Brown high-performance plastic fabricated manifold part"
+  },
+  {
+    src: "/images/plastic-portfolio-cnc-routing.webp",
+    alt: "CNC routing a plastic sheet with visible shavings"
+  },
+  {
+    src: "/images/plastic-portfolio-vapor-smoothed-part.webp",
+    alt: "Black plastic component with smooth curved ribs"
+  }
+];
+
+const plasticFabricationServiceCards = [
+  {
+    title: "Plastic Machining",
+    description:
+      "We provide precision machining of plastic materials for all types of industries, delivering clean edges, tight tolerances, and repeatable parts for prototypes and production.",
+    image: "/images/plastic-machining-card-cnc.png",
+    imageAlt: "CNC machine cutting a clear plastic component",
+    href: "/contact"
+  },
+  {
+    title: "Custom Plastic Fabrication",
+    description:
+      "We provide custom plastic fabrication for all types of industries. Choose from many plastic materials we offer, with cutting, forming, bonding, and finishing built around your project needs.",
+    image: "/images/custom-plastic-fabrication-card.png",
+    imageAlt: "Close-up plastic fabrication material with a dark machined edge",
+    href: "/contact"
+  },
+  {
+    title: "Carbon Fiber Tubes",
+    description:
+      "Precision carbon fiber tube solutions designed for lightweight strength, durable structural performance, clean cut finishes, and dependable fit for industrial, robotic, and engineered assemblies.",
+    image: "/images/carbon-service-tubes.webp",
+    imageAlt: "Rows of round carbon fiber tubes",
+    href: "/contact"
   }
 ];
 
@@ -236,6 +300,18 @@ export default function PlasticMachiningPage() {
             </motion.div>
           </div>
         </section>
+
+        <CarbonFiberServicesSection
+          eyebrow="PRECISION Plastic Fabrication"
+          title="Plastic Machining & Fabrication"
+          description="We provide custom plastic fabrication solutions with precision machining, clean finishing, and dependable part quality. From prototypes to production runs, our team supports durable plastic components built around your drawings, materials, and application needs."
+          services={plasticFabricationServiceCards}
+        />
+
+        <GallerySection
+          images={plasticMachiningPortfolioImages}
+          sectionClassName="bg-[radial-gradient(circle_at_50%_12%,rgba(37,99,235,0.05),transparent_30rem),var(--color-soft-white)]"
+        />
 
         <section className={styles.capabilityStrip} aria-label="Plastic machining capabilities">
           <div className={`container-width ${styles.capabilityGrid}`}>

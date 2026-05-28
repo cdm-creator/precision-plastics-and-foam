@@ -69,7 +69,7 @@ export function GallerySection({
   }, [activeImage]);
 
   return (
-    <section className={`${sectionClassName} py-12 md:py-20`}>
+    <section className={`${sectionClassName} py-12 md:py-14`}>
       <div className="container-width">
         <h2 className="h2 text-center">Portfolio</h2>
 
