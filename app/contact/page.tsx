@@ -36,7 +36,7 @@ const contactCards = [
   {
     title: "Address",
     value: "800 Marion Pugh Dr",
-    detail: "77840, TX",
+    detail: "77840, TX, USA",
     icon: MapPin
   },
   {
@@ -313,7 +313,7 @@ export default function ContactPage() {
               <div className="industrial-card overflow-hidden bg-card">
                 <iframe
                   title="Precision Plastics & Foam map"
-                  src="https://www.google.com/maps?q=800%20Marion%20Pugh%20Dr%2C%2077840%2C%20TX&output=embed"
+                  src="https://www.google.com/maps?q=800%20Marion%20Pugh%20Dr%2C%2077840%2C%20TX%2C%20USA&output=embed"
                   className="h-full min-h-[330px] w-full border-0 sm:min-h-[350px]"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -393,7 +393,7 @@ export default function ContactPage() {
               <div className="body mt-6 grid gap-5">
                 <p>
                   Precision Plastics & Foam is located at 800 Marion Pugh Dr,
-                  77840, TX and specializes in precision plastic machining and custom foam
+                  77840, TX, USA and specializes in precision plastic machining and custom foam
                   solutions for a wide range of industries. Our process ensures
                   we deliver high-quality parts with accuracy, consistency, and
                   on-time results.

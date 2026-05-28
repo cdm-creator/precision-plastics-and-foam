@@ -141,7 +141,7 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-4 w-4 text-accent" />
-              <span>800 Marion Pugh Dr, 77840, TX</span>
+              <span>800 Marion Pugh Dr, 77840, TX, USA</span>
             </li>
           </ul>
         </div>
