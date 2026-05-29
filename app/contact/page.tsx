@@ -138,7 +138,7 @@ export default function ContactPage() {
                   Home
                 </Link>
                 <span>/</span>
-                <span className="text-white">Contact Us</span>
+                <span className="text-white">Precision Plastic Fabrication, Custom Foam Inserts, & Carbon Fiber Machining</span>
               </motion.nav>
               <motion.h1 variants={fadeUpVariants} className="h1 mt-5 text-white">
                 Contact us
