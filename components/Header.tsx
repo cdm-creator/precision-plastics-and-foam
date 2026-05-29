@@ -13,7 +13,7 @@ const navItems = [
   { label: "Plastic Machining", href: "/plastic-machining" },
   { label: "Carbon Fiber Machining", href: "/carbon-fiber-machining" },
   { label: "Industries", href: "/industries" },
-  { label: "Precision Plastic Fabrication, Custom Foam Inserts, & Carbon Fiber Machining", href: "/contact" }
+  { label: "Contact us", href: "/contact" }
 ];
 
 const industryLinks = [
