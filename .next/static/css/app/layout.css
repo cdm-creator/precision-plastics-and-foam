@@ -2133,6 +2133,9 @@ p,
 .overflow-visible {
   overflow: visible;
 }
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -3696,6 +3699,9 @@ a {
   }
   .lg\:text-\[2\.10rem\] {
     font-size: 2.10rem;
+  }
+  .lg\:text-\[40px\] {
+    font-size: 40px;
   }
   .lg\:text-\[50px\] {
     font-size: 50px;

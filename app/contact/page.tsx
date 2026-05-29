@@ -101,7 +101,7 @@ export default function ContactPage() {
     <>
       <TopBar />
       <Header />
-      <main>
+      <main className="overflow-x-hidden">
         <section className="relative isolate overflow-hidden bg-primary text-white">
           <motion.div
             initial={reduceMotion ? false : "hidden"}
@@ -140,7 +140,7 @@ export default function ContactPage() {
                 <span>/</span>
                 <span className="text-white">Contact us</span>
               </motion.nav>
-              <motion.h1 variants={fadeUpVariants} className="h1 mt-5 text-white">
+              <motion.h1 variants={fadeUpVariants} className="h1 mt-5 text-white lg:text-[40px]">
                 Precision Plastic Fabrication, Custom Foam Inserts, & Carbon Fiber Machining
               </motion.h1>
               <motion.p variants={fadeUpVariants} className="body-large mt-5 max-w-xl text-white/85">
@@ -191,12 +191,12 @@ export default function ContactPage() {
               </p>
             </FadeIn>
 
-            <div className="grid items-stretch gap-8 lg:grid-cols-[1.06fr_0.94fr]">
-            <FadeIn className="industrial-card flex h-full flex-col bg-card p-6 sm:p-8 lg:p-10">
-              <form className="grid flex-1 gap-5">
+            <div className="grid min-w-0 items-stretch gap-8 lg:grid-cols-[1.06fr_0.94fr]">
+            <FadeIn className="industrial-card flex h-full min-w-0 flex-col bg-card p-6 sm:p-8 lg:p-10">
+              <form className="grid min-w-0 flex-1 gap-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   {fields.map((field) => (
-                    <label key={field.name} className="grid gap-2">
+                    <label key={field.name} className="grid min-w-0 gap-2">
                       <span className="small-text font-semibold text-muted-strong">
                         {field.label}
                       </span>
@@ -205,12 +205,12 @@ export default function ContactPage() {
                         name={field.name}
                         placeholder={field.placeholder}
                         required={field.required}
-                        className="h-12 rounded-control border border-system bg-white px-4 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
+                        className="h-12 w-full min-w-0 rounded-control border border-system bg-white px-4 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
                       />
                     </label>
                   ))}
                 </div>
-                <label className="grid gap-2">
+                <label className="grid min-w-0 gap-2">
                   <span className="small-text font-semibold text-muted-strong">
                     Company / Organization
                   </span>
@@ -218,11 +218,11 @@ export default function ContactPage() {
                     type="text"
                     name="company"
                     placeholder="Company / Organization"
-                    className="h-12 rounded-control border border-system bg-white px-4 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
+                    className="h-12 w-full min-w-0 rounded-control border border-system bg-white px-4 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
                   />
                 </label>
                 <div className="grid gap-5 sm:grid-cols-2">
-                  <label className="grid gap-2">
+                  <label className="grid min-w-0 gap-2">
                     <span className="small-text font-semibold text-muted-strong">
                       What are you looking for? *
                     </span>
@@ -231,7 +231,7 @@ export default function ContactPage() {
                         name="lookingFor"
                         required
                         defaultValue=""
-                        className="h-12 w-full appearance-none rounded-control border border-system bg-white px-4 pr-11 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
+                        className="h-12 w-full min-w-0 appearance-none rounded-control border border-system bg-white px-4 pr-11 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
                       >
                         <option value="" disabled>
                           Select Below
@@ -250,7 +250,7 @@ export default function ContactPage() {
                       />
                     </span>
                   </label>
-                  <label className="grid gap-2">
+                  <label className="grid min-w-0 gap-2">
                     <span className="small-text font-semibold text-muted-strong">
                       How many do you need? *
                     </span>
@@ -260,11 +260,11 @@ export default function ContactPage() {
                       placeholder="Number of Pieces Needed"
                       required
                       min="1"
-                      className="h-12 rounded-control border border-system bg-white px-4 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
+                      className="h-12 w-full min-w-0 rounded-control border border-system bg-white px-4 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
                     />
                   </label>
                 </div>
-                <label className="grid gap-2">
+                <label className="grid min-w-0 gap-2">
                   <span className="small-text font-semibold text-muted-strong">
                     What type of equipment are you going to store in the case/foam?
                   </span>
@@ -272,7 +272,7 @@ export default function ContactPage() {
                     name="equipmentDetails"
                     placeholder="Provide as much detail as possible."
                     rows={2}
-                    className="min-h-16 resize-y rounded-control border border-system bg-white px-4 py-3 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
+                    className="min-h-16 w-full min-w-0 resize-y rounded-control border border-system bg-white px-4 py-3 text-muted-strong outline-none transition hover:border-steel/60 focus:border-steel"
                   />
                 </label>
                 <label className="flex items-start gap-3 text-xs font-medium leading-4 text-muted">
