@@ -42,9 +42,21 @@ const faqs = [
   }
 ];
 
-export function FaqSection({ className }: { className?: string }) {
+type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+type FaqSectionProps = {
+  className?: string;
+  faqs?: FaqItem[];
+  introText?: string;
+};
+
+export function FaqSection({ className, faqs: customFaqs, introText }: FaqSectionProps) {
   const [openIndex, setOpenIndex] = useState(0);
   const reduceMotion = useReducedMotion();
+  const sectionFaqs = customFaqs ?? faqs;
 
   return (
     <section
@@ -76,7 +88,7 @@ export function FaqSection({ className }: { className?: string }) {
             We&apos;ve Got Answers.
           </motion.h2>
           <motion.p variants={fadeUpVariants} className="body-large mt-5 max-w-xl">
-            Find quick answers to the most common questions about our solutions, process, and support.
+            {introText ?? "Find quick answers to the most common questions about our solutions, process, and support."}
           </motion.p>
 
           <motion.div
@@ -117,7 +129,7 @@ export function FaqSection({ className }: { className?: string }) {
           }}
           className="grid gap-5"
         >
-          {faqs.map((faq, index) => {
+          {sectionFaqs.map((faq, index) => {
             const isOpen = openIndex === index;
             const Icon = isOpen ? ChevronUp : ChevronDown;
 

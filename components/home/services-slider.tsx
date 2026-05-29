@@ -5,8 +5,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import {
   ArrowUpRight,
   Box,
-  Film,
   LucideIcon,
+  PackageCheck,
   Printer,
   Router,
   Scissors,
@@ -50,10 +50,10 @@ const services: Service[] = [
     icon: Wrench
   },
   {
-    title: "Film Conversion",
-    text: "Our plastic film converting service supports precise cutting, slitting, and rewinding to deliver custom sizes for packaging and manufacturing applications.",
-    href: "/plastic-machining#services",
-    icon: Film
+    title: "Custom Cases",
+    text: "We build custom case solutions with precision-cut foam interiors to protect, organize, and present tools, equipment, electronics, and sensitive products.",
+    href: "/foam-inserts",
+    icon: PackageCheck
   },
   {
     title: "Foam Insert Design",
@@ -118,7 +118,7 @@ export function ServicesSlider() {
           </motion.h2>
           <motion.p variants={fadeUpVariants} className={`body ${styles.intro}`}>
             From cut-to-size plastic materials to CNC machining, 3D printing,
-            custom fabrication, and film conversion, our team delivers precise
+            custom fabrication, and custom case solutions, our team delivers precise
             solutions built around your project requirements.
           </motion.p>
         </motion.div>

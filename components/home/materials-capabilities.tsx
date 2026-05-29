@@ -49,8 +49,22 @@ const tabs = [
   }
 ];
 
-export function MaterialsCapabilities() {
-  const [activeTab, setActiveTab] = useState(tabs[0]);
+type MaterialsCapabilitiesProps = {
+  foamImage?: string;
+  foamImageAlt?: string;
+};
+
+export function MaterialsCapabilities({ foamImage, foamImageAlt }: MaterialsCapabilitiesProps = {}) {
+  const configuredTabs = tabs.map((tab) =>
+    tab.id === "foam" && foamImage
+      ? {
+          ...tab,
+          image: foamImage,
+          imageAlt: foamImageAlt ?? tab.imageAlt
+        }
+      : tab
+  );
+  const [activeTab, setActiveTab] = useState(configuredTabs[0]);
   const reduceMotion = useReducedMotion();
 
   return (
@@ -92,7 +106,7 @@ export function MaterialsCapabilities() {
           role="tablist"
           aria-label="Materials and capabilities tabs"
         >
-          {tabs.map((tab) => {
+          {configuredTabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab.id === tab.id;
 

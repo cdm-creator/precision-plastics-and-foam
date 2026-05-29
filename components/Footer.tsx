@@ -10,8 +10,9 @@ const columns = [
       { label: "Home", href: "/" },
       { label: "About", href: "/about" },
       { label: "Industries", href: "/industries" },
+      { label: "Blogs", href: "/blogs" },
       { label: "Contact", href: "/contact" },
-       { label: "Custom Foam Inserts", href: "/foam-inserts" },
+      { label: "Custom Foam Inserts", href: "/foam-inserts" },
       { label: "Plastic Machining", href: "/plastic-machining" }
     ]
   },

@@ -16,8 +16,8 @@ const posts = [
     category: "Plastic Machining",
     readTime: "5 Min Read",
     href: "/blogs/cnc-machining-vs-injection-molding-which-is-right",
-    image: "/images/plastic-service-cnc.webp",
-    alt: "CNC machining equipment shaping a precision component"
+    image: "/images/plastic-portfolio-cnc-machine.webp",
+    alt: "CNC machine used for plastic machining"
   },
   {
     day: "12",
@@ -28,8 +28,8 @@ const posts = [
     category: "Foam Solutions",
     readTime: "4 Min Read",
     href: "/blogs/how-custom-foam-inserts-protect-high-value-equipment",
-    image: "/images/foam-inserts-tools-case.webp",
-    alt: "Industrial worker inspecting custom protective materials in a manufacturing facility"
+    image: "/images/foam-portfolio-camera-lens-insert.webp",
+    alt: "Camera lenses organized in custom cut foam"
   },
   {
     day: "03",
@@ -40,8 +40,8 @@ const posts = [
     category: "Industry Insights",
     readTime: "6 Min Read",
     href: "/blogs/top-industries-that-benefit-from-custom-plastic-parts",
-    image: "/images/hero-industrial-machinery.webp",
-    alt: "Industrial manufacturing floor with advanced equipment"
+    image: "/images/plastic-portfolio-white-sprocket.webp",
+    alt: "White machined plastic sprocket component"
   }
 ];
 
