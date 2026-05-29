@@ -101,11 +101,11 @@ const plasticFabricationServiceCards = [
     href: "/contact"
   },
   {
-    title: "Carbon Fiber Tubes",
+    title: "3D Printing",
     description:
-      "Precision carbon fiber tube solutions designed for lightweight strength, durable structural performance, clean cut finishes, and dependable fit for industrial, robotic, and engineered assemblies.",
-    image: "/images/carbon-service-tubes.webp",
-    imageAlt: "Rows of round carbon fiber tubes",
+      "We provide precision plastic 3D printing for prototypes, fixtures, and functional parts, using durable materials, accurate details, and production-minded finishing for industrial applications.",
+    image: "/images/plastic-machining-card-3d-printing.jpg",
+    imageAlt: "Black 3D printed plastic bracket with metal threaded inserts",
     href: "/contact"
   }
 ];
@@ -114,7 +114,7 @@ const services = [
   {
     number: "01",
     title: "Cut-to-Size",
-    text: "Custom cutting of sheets, rods, and tubes with high accuracy.",
+    text: "Precision cut-to-size plastic sheets, rods, and tubes with clean edges and consistent sizing.",
     image: "/images/plastic-service-cut-to-size.webp",
     imageAlt: "Plastic film and sheet material being converted on industrial rollers"
   },
@@ -134,17 +134,17 @@ const services = [
   },
   {
     number: "04",
-    title: "Custom Fabrication",
-    text: "On-site custom design, cutting, drilling, and fabrication tailored to your requirements.",
-    image: "/images/plastic-service-custom-fabrication.webp",
-    imageAlt: "Industrial fabrication machine shaping plastic material"
+    title: "Plastic Machining",
+    text: "CNC machining of plastic material with high precision, clean finishes, and repeatable accuracy for prototypes, fixtures, and production components.",
+    image: "/images/plastic-service-machining-precision.webp",
+    imageAlt: "CNC machine cutting a clear plastic component with high precision"
   },
   {
     number: "05",
-    title: "Film Conversion",
-    text: "Precision slitting, rewinding, and cutting of plastic films for various industries.",
-    image: "/images/plastic-service-film-conversion.webp",
-    imageAlt: "Plastic film conversion machine with glossy roll material"
+    title: "Plastic Fabrication",
+    text: "Plastic fabrication for all your projects, including custom cutting, shaping, drilling, bonding, and finishing tailored to your application requirements.",
+    image: "/images/plastic-service-fabrication-acrylic.webp",
+    imageAlt: "CNC machining clear acrylic plastic material"
   }
 ];
 
@@ -187,6 +187,39 @@ const machiningHighlights = [
     image:
       "https://images.pexels.com/photos/11048741/pexels-photo-11048741.jpeg?auto=compress&cs=tinysrgb&fm=webp&w=1400",
     imageAlt: "Industrial factory with plastic processing tanks and equipment"
+  }
+];
+
+const plasticMachiningFaqs = [
+  {
+    question: "What plastic machining services do you provide?",
+    answer:
+      "We provide CNC machining of plastic materials for precision parts, prototypes, fixtures, and production components. Our work focuses on clean edges, tight tolerances, consistent repeatability, and reliable finishes for industrial applications."
+  },
+  {
+    question: "Can you handle custom plastic fabrication projects?",
+    answer:
+      "Yes. We support custom plastic fabrication projects with cutting, shaping, drilling, forming, bonding, and finishing based on your drawings, dimensions, material needs, and application requirements."
+  },
+  {
+    question: "Do you offer plastic 3D printing?",
+    answer:
+      "Yes. We provide precision plastic 3D printing for prototypes, functional parts, fixtures, and low-volume components where complex geometry, quick iteration, or production-minded testing is needed."
+  },
+  {
+    question: "What plastic materials can you work with?",
+    answer:
+      "We work with a range of engineering plastics such as acrylic, HDPE, PVC, nylon, polycarbonate, and other application-specific plastic materials. Material selection depends on strength, clarity, wear resistance, temperature needs, and part function."
+  },
+  {
+    question: "Can you make parts from drawings or sample components?",
+    answer:
+      "Yes. You can share drawings, CAD files, dimensions, photos, or sample parts. Our team reviews the details and recommends the right machining, fabrication, or 3D printing approach for the project."
+  },
+  {
+    question: "Do you support both prototypes and production runs?",
+    answer:
+      "Yes. We can help with one-off prototypes, short runs, fixtures, replacement parts, and repeat production work, while keeping accuracy, finish quality, and delivery requirements in focus."
   }
 ];
 
@@ -248,8 +281,8 @@ export default function PlasticMachiningPage() {
             transition={{ ...motionTimings.hero, duration: 1.1 }}
           >
             <Image
-              src="/images/plastic-machining-hero.webp"
-              alt="CNC machine cutting a white engineered plastic component"
+              src="/images/plastic-machining-hero-vapour-smoothing.webp"
+              alt="Close-up of a black 3D printed plastic component"
               fill
               priority
               sizes="100vw"
@@ -443,7 +476,10 @@ export default function PlasticMachiningPage() {
           </div>
         </section>
 
-        <FaqSection />
+        <FaqSection
+          introText="Find quick answers about our plastic machining, custom fabrication, 3D printing, materials, and project support."
+          faqs={plasticMachiningFaqs}
+        />
 
         <section id="contact" className={styles.cta}>
           <div className={styles.ctaImage}>

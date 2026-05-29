@@ -56,6 +56,39 @@ const carbonFiberPortfolioImages: GalleryImage[] = [
   }
 ];
 
+const carbonFiberFaqs = [
+  {
+    question: "What carbon fiber machining services do you provide?",
+    answer:
+      "We provide precision CNC machining for carbon fiber plates, brackets, panels, and custom composite components that require clean edges, accurate features, and repeatable fit."
+  },
+  {
+    question: "Can you support carbon fiber batch production?",
+    answer:
+      "Yes. We support carbon fiber batch production for repeat parts, validated prototypes, and scalable manufacturing needs where consistent quality and efficient turnaround are important."
+  },
+  {
+    question: "Do you offer carbon fiber tube solutions?",
+    answer:
+      "Yes. We provide carbon fiber tube solutions for lightweight structural applications, including clean cut finishes, dependable fit, and durable performance for industrial and engineered assemblies."
+  },
+  {
+    question: "What types of carbon fiber parts can you machine?",
+    answer:
+      "Common work includes plates, links, brackets, flanges, drone frames, tube components, and custom composite shapes made for aerospace, robotics, industrial, and performance applications."
+  },
+  {
+    question: "Can you work from drawings or CAD files?",
+    answer:
+      "Yes. You can send drawings, CAD files, dimensions, photos, or sample parts. Our team reviews the part geometry, tolerances, material needs, and production quantity before recommending the machining approach."
+  },
+  {
+    question: "What should I include when requesting a quote?",
+    answer:
+      "Please include part drawings or CAD files, material requirements, thickness or tube dimensions, tolerances, quantities, finish expectations, and any application details that affect strength, weight, or fit."
+  }
+];
+
 function FadeIn({
   children,
   className = ""
@@ -216,11 +249,17 @@ export default function CarbonFiberMachiningPage() {
 
         <ServicesSlider />
 
-        <MaterialsCapabilities />
+        <MaterialsCapabilities
+          foamImage="/images/carbon-materials-foam-cnc.webp"
+          foamImageAlt="CNC tool cutting carbon fiber material"
+        />
 
         <ApplicationsSlider />
 
-        <FaqSection />
+        <FaqSection
+          introText="Find quick answers about carbon fiber machining, batch production, carbon fiber tubes, materials, drawings, and project quotes."
+          faqs={carbonFiberFaqs}
+        />
 
         <TestimonialsSection />
 

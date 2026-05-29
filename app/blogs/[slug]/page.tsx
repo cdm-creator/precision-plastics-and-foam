@@ -19,8 +19,8 @@ const blogPosts = [
     readTime: "4 Min Read",
     excerpt:
       "Explore how precision-cut foam inserts protect sensitive tools, electronics, and mission-critical equipment during transport and storage.",
-    image: "/images/foam-inserts-tools-case.webp",
-    alt: "Industrial worker inspecting custom protective materials in a manufacturing facility"
+    image: "/images/foam-portfolio-camera-lens-insert.webp",
+    alt: "Camera lenses organized in custom cut foam"
   },
   {
     category: "Plastic Machining",
@@ -29,8 +29,8 @@ const blogPosts = [
     readTime: "5 Min Read",
     excerpt:
       "Compare precision, tooling cost, lead time, and production volume to choose the right process for your next plastic component.",
-    image: "/images/plastic-service-cnc.webp",
-    alt: "CNC machining equipment shaping a precision component"
+    image: "/images/plastic-portfolio-cnc-machine.webp",
+    alt: "CNC machine used for plastic machining"
   },
   {
     category: "Industry Insights",
@@ -39,8 +39,8 @@ const blogPosts = [
     readTime: "6 Min Read",
     excerpt:
       "From aerospace to medical devices, custom plastic components help teams improve durability, fit, weight, and performance.",
-    image: "/images/hero-industrial-machinery.webp",
-    alt: "Industrial manufacturing floor with advanced equipment"
+    image: "/images/plastic-portfolio-white-sprocket.webp",
+    alt: "White machined plastic sprocket component"
   },
   {
     category: "Manufacturing",
@@ -50,7 +50,7 @@ const blogPosts = [
     excerpt:
       "A closer look at how planning, material selection, cutting, machining, and inspection create repeatable quality.",
     image: "/images/showcase-engineering-planning.webp",
-    alt: "Manufacturing team working near industrial robotic equipment"
+    alt: "Engineering planning and manufacturing workflow"
   },
   {
     category: "Foam Solutions",
@@ -59,8 +59,8 @@ const blogPosts = [
     readTime: "4 Min Read",
     excerpt:
       "Learn why engineered foam inserts improve organization, impact protection, presentation, and long-term product safety.",
-    image: "/images/foam-solution-protective-packaging.webp",
-    alt: "Protective packaging and organized materials in an industrial setting"
+    image: "/images/foam-portfolio-custom-case-layout.webp",
+    alt: "Open hard case with custom cut black foam cavities"
   },
   {
     category: "Plastic Materials",
@@ -69,8 +69,8 @@ const blogPosts = [
     readTime: "6 Min Read",
     excerpt:
       "Understand common engineering plastics and how material properties influence strength, wear, temperature, and cost.",
-    image: "/images/plastic-service-cut-to-size.webp",
-    alt: "Close-up of industrial plastic material and fabrication equipment"
+    image: "/images/plastic-portfolio-ultem-printed-part.webp",
+    alt: "Brown high-performance plastic fabricated manifold part"
   },
   {
     category: "Plastic Machining",
@@ -79,8 +79,8 @@ const blogPosts = [
     readTime: "7 Min Read",
     excerpt:
       "A practical guide to tolerances, materials, finishes, and design considerations for CNC-machined plastic parts.",
-    image: "/images/plastic-machining-hero.webp",
-    alt: "Precision machining tool cutting material in a workshop"
+    image: "/images/plastic-portfolio-cnc-routing.webp",
+    alt: "CNC routing a plastic sheet with visible shavings"
   },
   {
     category: "Industry Insights",
@@ -89,8 +89,8 @@ const blogPosts = [
     readTime: "5 Min Read",
     excerpt:
       "Discover how purpose-built foam and plastic solutions reduce field failures, improve usability, and support better outcomes.",
-    image: "/images/showcase-plastic-machining.webp",
-    alt: "Industrial engineer reviewing product performance in a production facility"
+    image: "/images/portfolio-clear-machined-plastic.webp",
+    alt: "Clear machined plastic component"
   },
   {
     category: "Foam Solutions",
@@ -99,8 +99,8 @@ const blogPosts = [
     readTime: "4 Min Read",
     excerpt:
       "Compare protection, reusability, product fit, and presentation to determine which packaging approach is right for you.",
-    image: "/images/foam-solution-equipment-cases.webp",
-    alt: "Industrial packaging materials prepared for shipment"
+    image: "/images/foam-portfolio-blue-tray-insert.webp",
+    alt: "Blue foam tray insert with multiple precision-cut compartments"
   }
 ];
 
@@ -118,32 +118,32 @@ const latestBlogs = [
   {
     title: "How Custom Foam Inserts Protect High-Value Equipment",
     date: "May 12, 2026",
-    image: "/images/foam-inserts-tools-case.webp",
-    alt: "Industrial worker inspecting custom protective materials"
+    image: "/images/foam-portfolio-camera-lens-insert.webp",
+    alt: "Camera lenses organized in custom cut foam"
   },
   {
     title: "CNC Machining vs. Injection Molding: Which is Right?",
     date: "May 8, 2026",
-    image: "/images/plastic-service-cnc.webp",
-    alt: "CNC machining equipment shaping a precision component"
+    image: "/images/plastic-portfolio-cnc-machine.webp",
+    alt: "CNC machine used for plastic machining"
   },
   {
     title: "Top Industries That Benefit from Custom Plastic Parts",
     date: "May 3, 2026",
-    image: "/images/hero-industrial-machinery.webp",
-    alt: "Industrial manufacturing floor with advanced equipment"
+    image: "/images/plastic-portfolio-white-sprocket.webp",
+    alt: "White machined plastic sprocket component"
   },
   {
     title: "Inside Our Manufacturing Process: Quality Every Step",
     date: "April 28, 2026",
     image: "/images/showcase-engineering-planning.webp",
-    alt: "Manufacturing team working near industrial robotic equipment"
+    alt: "Engineering planning and manufacturing workflow"
   },
   {
     title: "5 Benefits of Using Foam Inserts for Your Products",
     date: "April 21, 2026",
-    image: "/images/foam-solution-protective-packaging.webp",
-    alt: "Protective packaging and organized materials in an industrial setting"
+    image: "/images/foam-portfolio-custom-case-layout.webp",
+    alt: "Open hard case with custom cut black foam cavities"
   }
 ];
 

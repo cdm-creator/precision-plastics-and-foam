@@ -101,23 +101,23 @@ const foamInsertServiceCards = [
 
 const whyFeatures = [
   {
-    title: "Custom fit",
-    text: "Fabricatable to fit any cavity such as a corrugated or plastic box, hard case, or ATA case.",
+    title: "Precision product fit",
+    text: "Cut to your product shape & case size for a clean, secure fit.",
     icon: Grid3X3
   },
   {
-    title: "Shock & abrasion protection",
-    text: "Superior shock and vibration protection, or abrasion resistance.",
+    title: "Shock and vibration protection",
+    text: "Absorbs impact and reduces movement during storage and transport.",
     icon: ShieldCheck
   },
   {
-    title: "Organized storage",
-    text: "Can attractively organize multiple parts in a case or crate.",
+    title: "Organized case layouts",
+    text: "Defined cavities keep items easy to identify and remove.",
     icon: Boxes
   },
   {
-    title: "Specialty foams",
-    text: "Specialty foams such as Ethafoam, cross-linked, or beaded polyethylene help protect even class A surfaces.",
+    title: "Material matched to the job",
+    text: "Foam type and density are selected for protection and presentation.",
     icon: Layers3
   }
 ];
@@ -144,8 +144,8 @@ const solutionTabs = [
   {
     title: "Protective Packaging",
     panelTitle: "Protective Packaging Solutions",
-    image: "/images/foam-solution-protective-packaging.webp",
-    imageAlt: "Close view of red-handled tools protected in custom black foam",
+    image: "/images/foam-portfolio-box-insert.webp",
+    imageAlt: "Black foam insert fitted inside a product box",
     text: "Custom foam inserts are designed to cushion, protect, and secure products during transit, storage, and repeated handling.",
     checks: [
       "Shock & vibration absorption",
@@ -157,8 +157,8 @@ const solutionTabs = [
   {
     title: "Equipment Cases",
     panelTitle: "Case-Ready Foam Interiors",
-    image: "/images/foam-solution-equipment-cases.webp",
-    imageAlt: "Tools arranged in custom cut black foam on a work surface",
+    image: "/images/foam-portfolio-custom-case-layout.webp",
+    imageAlt: "Open hard case with custom cut black foam cavities",
     text: "Hard cases, field kits, tool cases, and transport cases can be fitted with clean foam interiors that improve protection and usability.",
     checks: [
       "Clean cavity layouts",
@@ -170,8 +170,8 @@ const solutionTabs = [
   {
     title: "Custom Shapes",
     panelTitle: "Precision-Cut Foam Shapes",
-    image: "/images/foam-solution-custom-shapes.webp",
-    imageAlt: "Electronic meters organized in a custom hard case foam insert",
+    image: "/images/foam-portfolio-specialist-foam-block.webp",
+    imageAlt: "Specialist black foam block with custom shaped cutouts",
     text: "From simple pads to complex layered assemblies, custom cut foam shapes are built around the geometry and handling risk of each product.",
     checks: [
       "Profile cut cavities",
@@ -183,8 +183,8 @@ const solutionTabs = [
   {
     title: "Storage & Organization",
     panelTitle: "Foam Layouts for Organized Storage",
-    image: "/images/foam-solution-storage-organization.webp",
-    imageAlt: "Foam tray with organized vial and tube cavities",
+    image: "/images/foam-portfolio-blue-tray-insert.webp",
+    imageAlt: "Blue foam tray insert with multiple precision-cut compartments",
     text: "Organized foam layouts make tools, instruments, kits, and parts easier to inventory, retrieve, and repack after each use.",
     checks: [
       "Visual part control",
@@ -196,8 +196,8 @@ const solutionTabs = [
   {
     title: "High Value Protection",
     panelTitle: "Protection for Sensitive Products",
-    image: "/images/foam-solution-high-value-protection.webp",
-    imageAlt: "Stacked colorful precision-cut foam inserts",
+    image: "/images/foam-portfolio-camera-lens-insert.webp",
+    imageAlt: "Camera lenses organized in custom cut foam",
     text: "Specialty foams support delicate, sensitive, or high-value products where surface finish, static, impact, and cleanliness matter.",
     checks: [
       "Class A surface protection",
@@ -299,6 +299,39 @@ const foamTypes = [
   }
 ];
 
+const foamInsertFaqs = [
+  {
+    question: "What custom foam inserts do you provide?",
+    answer:
+      "We design and fabricate foam inserts for cases, boxes, packaging, storage, and transport. Each insert is built around the product shape, weight, handling needs, and protection requirements."
+  },
+  {
+    question: "Can you make foam insert cases for equipment and tools?",
+    answer:
+      "Yes. We provide precision foam insert cases for tools, electronics, camera equipment, instruments, and sensitive products, helping keep items organized, protected, and easy to identify during use."
+  },
+  {
+    question: "Do you offer foam insert boxes for product packaging?",
+    answer:
+      "Yes. We build custom foam insert boxes for protective packaging and presentation, using foam layouts that reduce movement, absorb impact, and keep products secure during shipping or storage."
+  },
+  {
+    question: "Can you create custom cases with foam interiors?",
+    answer:
+      "Yes. We can support custom cases with foam interiors designed around your product dimensions, weight, and handling conditions for secure transport, storage, and presentation."
+  },
+  {
+    question: "What foam materials can be used?",
+    answer:
+      "Foam selection depends on your product and application. Common options include polyethylene, crosslinked polyethylene, polyurethane, expanded PE or PP, and ESD foam for sensitive electronics."
+  },
+  {
+    question: "What do you need to quote a foam insert project?",
+    answer:
+      "Send product dimensions, photos, drawings, case or box details, material preferences, quantity, and any protection requirements such as shock, vibration, abrasion, ESD, or presentation needs."
+  }
+];
+
 function Reveal({
   children,
   className = ""
@@ -396,8 +429,8 @@ export default function FoamInsertsPage() {
             transition={{ ...motionTimings.hero, duration: 1.1 }}
           >
             <Image
-              src="/images/foam-inserts-hero.webp"
-              alt="Dark custom hard case foam insert with camera equipment"
+              src="/images/foam-inserts-hero-custom-case.webp"
+              alt="Camera lenses protected in a custom foam insert case"
               fill
               priority
               sizes="100vw"
@@ -433,11 +466,11 @@ export default function FoamInsertsPage() {
                 Foam Sets & Inserts
               </motion.h1>
               <motion.p variants={fadeUpVariants} className={`body-large ${styles.heroLead}`}>
-                Strengthen your packaging protective capability against shock and vibration with an intelligently designed custom foam insert.
+                Strengthen your packaging protection against shock and vibration with 
+                intelligently designed custom foam inserts. Reduce operational costs and simplify packaging 
+                management with in-house foam design.
               </motion.p>
-              <motion.p variants={fadeUpVariants} className={`body ${styles.heroText}`}>
-                Save time, cut operational expense, and reduce admin headaches by partnering directly with a foam manufacturer using in-house foam insert designers and precision cutting capabilities.
-              </motion.p>
+             
               <motion.div variants={fadeUpVariants} className="mt-8">
                 <Link href="/contact" className="btn-primary">
                   Request Quote
@@ -511,8 +544,8 @@ export default function FoamInsertsPage() {
 
             <Reveal className={`${styles.imageFrame} ${styles.matchHeightImage}`}>
               <Image
-                src="/images/showcase-foam-inserts.webp"
-                alt="Precision custom foam insert with organized cavities"
+                src="/images/foam-insert-cases.png"
+                alt="Open protective hard case with custom foam insert compartments"
                 fill
                 sizes="(min-width: 1024px) 48vw, 100vw"
                 className={styles.image}
@@ -525,8 +558,8 @@ export default function FoamInsertsPage() {
           <div className={`container-width ${styles.gridTwo} ${styles.overviewGrid}`}>
             <Reveal className={styles.imageFrame}>
               <Image
-                src="/images/foam-inserts-tools-case.webp"
-                alt="Tool set organized in a custom foam insert hard case"
+                src="/images/foam-inserts-overview-custom-foam.webp"
+                alt="Custom cut black foam packaging block with shaped cavities"
                 fill
                 sizes="(min-width: 1024px) 42vw, 100vw"
                 className={styles.image}
@@ -674,7 +707,11 @@ export default function FoamInsertsPage() {
           </div>
         </section>
 
-        <FaqSection className="bg-white" />
+        <FaqSection
+          className="bg-white"
+          introText="Find quick answers about custom foam inserts, foam insert cases, foam boxes, custom cases, materials, and project quotes."
+          faqs={foamInsertFaqs}
+        />
 
         <div id="resources">
           <FinalCtaBanner />

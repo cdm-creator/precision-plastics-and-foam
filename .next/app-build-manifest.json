@@ -18,11 +18,35 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
+    "/plastic-machining/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/plastic-machining/page.css",
+      "static/chunks/app/plastic-machining/page.js"
+    ],
+    "/foam-inserts/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/foam-inserts/page.css",
+      "static/chunks/app/foam-inserts/page.js"
+    ],
     "/carbon-fiber-machining/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/carbon-fiber-machining/page.css",
       "static/chunks/app/carbon-fiber-machining/page.js"
+    ],
+    "/blogs/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/blogs/page.css",
+      "static/chunks/app/blogs/page.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/contact/page.css",
+      "static/chunks/app/contact/page.js"
     ]
   }
 }
