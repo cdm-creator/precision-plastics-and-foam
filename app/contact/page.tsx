@@ -141,7 +141,7 @@ export default function ContactPage() {
                 <span className="text-white">Contact Us</span>
               </motion.nav>
               <motion.h1 variants={fadeUpVariants} className="h1 mt-5 text-white">
-                Precision Plastic Fabrication, Custom Foam Inserts, & Carbon Fiber Machining
+                Contact us
               </motion.h1>
               <motion.p variants={fadeUpVariants} className="body-large mt-5 max-w-xl text-white/85">
                 Have a question, need a quote, or want to discuss your project?
