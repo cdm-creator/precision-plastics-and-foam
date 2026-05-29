@@ -138,15 +138,15 @@ export default function ContactPage() {
                   Home
                 </Link>
                 <span>/</span>
-                <span className="text-white">Precision Plastic Fabrication, Custom Foam Inserts, & Carbon Fiber Machining</span>
+                <span className="text-white">Contact us</span>
               </motion.nav>
               <motion.h1 variants={fadeUpVariants} className="h1 mt-5 text-white">
-                Contact us
+                Precision Plastic Fabrication, Custom Foam Inserts, & Carbon Fiber Machining
               </motion.h1>
               <motion.p variants={fadeUpVariants} className="body-large mt-5 max-w-xl text-white/85">
-                Have a question, need a quote, or want to discuss your project?
-                We&apos;re here to help.
-              </motion.p>
+                We specialize in precision CNC machining of plastics, custom foam inserts, and high-performance carbon fiber components. 
+                From prototype to production, we can deliver it with precision. We help our customers bring complex designs to life with quality and speed.
+                </motion.p>
             </motion.div>
           </div>
         </section>
