@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HeroBottomDivider } from "@/components/HeroBottomDivider";
 import { TopBar } from "@/components/layout/top-bar";
-import { fadeUpVariants, heroMediaVariants, motionTimings } from "@/lib/motion";
+import { fadeUpVariants, motionTimings } from "@/lib/motion";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
@@ -72,7 +72,9 @@ const socials = [
 
 function useLeanMotion() {
   const reduceMotion = useReducedMotion();
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window === "undefined" ? false : window.matchMedia("(max-width: 767px)").matches
+  );
 
   useEffect(() => {
     const query = window.matchMedia("(max-width: 767px)");
@@ -121,15 +123,9 @@ export default function ContactPage() {
     <>
       <TopBar />
       <Header />
-      <main className="overflow-x-hidden">
+      <main className="contact-page">
         <section className="contact-hero relative isolate overflow-hidden bg-primary text-white">
-          <motion.div
-            initial={reduceMotion ? false : "hidden"}
-            animate="visible"
-            variants={heroMediaVariants}
-            transition={{ ...motionTimings.hero, duration: 1 }}
-            className="contact-hero__media absolute inset-0 -z-30"
-          >
+          <div className="contact-hero__media absolute inset-0 -z-30">
             <Image
               src="/images/contact-hero.webp"
               alt="Precision Plastics & Foam reception and office"
@@ -138,36 +134,28 @@ export default function ContactPage() {
               sizes="100vw"
               className="contact-hero__image object-cover object-center"
             />
-          </motion.div>
+          </div>
           <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,rgba(6,21,44,0.9)_0%,rgba(6,21,44,0.62)_42%,rgba(6,21,44,0.12)_76%,transparent_100%)]" />
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(3,10,22,0.08),rgba(3,10,22,0.68))]" />
           <HeroBottomDivider />
 
           <div className="contact-hero__inner container-width grid min-h-[34rem] items-center pt-24 pb-40">
-            <motion.div
-              initial={reduceMotion ? false : "hidden"}
-              animate="visible"
-              variants={{
-                hidden: {},
-                visible: { transition: { staggerChildren: reduceMotion ? 0 : 0.1 } }
-              }}
-              className="max-w-2xl"
-            >
-              <motion.nav variants={fadeUpVariants} aria-label="Breadcrumb" className="small-text flex items-center gap-2 text-white/75">
+            <div className="max-w-2xl">
+              <nav aria-label="Breadcrumb" className="small-text flex items-center gap-2 text-white/75">
                 <Link href="/" className="transition hover:text-white">
                   Home
                 </Link>
                 <span>/</span>
                 <span className="text-white">Contact us</span>
-              </motion.nav>
-              <motion.h1 variants={fadeUpVariants} className="h1 mt-5 text-white lg:text-[40px]">
+              </nav>
+              <h1 className="h1 mt-5 text-white lg:text-[40px]">
                 Precision Plastic Fabrication, Custom Foam Inserts, & Carbon Fiber Machining
-              </motion.h1>
-              <motion.p variants={fadeUpVariants} className="body-large mt-5 max-w-xl text-white/85">
+              </h1>
+              <p className="body-large mt-5 max-w-xl text-white/85">
                 We specialize in precision CNC machining of plastics, custom foam inserts, and high-performance carbon fiber components. 
                 From prototype to production, we can deliver it with precision. We help our customers bring complex designs to life with quality and speed.
-                </motion.p>
-            </motion.div>
+              </p>
+            </div>
           </div>
         </section>
 
