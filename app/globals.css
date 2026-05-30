@@ -1123,6 +1123,37 @@ a {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
+
+  @media (max-width: 767px) {
+    .contact-hero__inner {
+      min-height: 28rem;
+      padding-top: 4rem;
+      padding-bottom: 6.5rem;
+    }
+
+    .contact-hero__media {
+      transform-origin: center;
+    }
+
+    .contact-hero__image {
+      object-position: 58% center;
+    }
+
+    .contact-hero .h1 {
+      font-size: clamp(1.65rem, 7.8vw, 2.35rem);
+      line-height: 1.12;
+    }
+
+    .contact-hero .body-large {
+      margin-top: 1rem;
+      font-size: 0.9375rem;
+      line-height: 1.65;
+    }
+
+    .contact-map-frame {
+      pointer-events: none;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

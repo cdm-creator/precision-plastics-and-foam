@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const contactCards = [
   {
@@ -69,6 +70,25 @@ const socials = [
   { label: "Email", icon: Mail, href: "mailto:info@ppfsales.com" }
 ];
 
+function useLeanMotion() {
+  const reduceMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 767px)");
+    const updateIsMobile = () => setIsMobile(query.matches);
+
+    updateIsMobile();
+    query.addEventListener("change", updateIsMobile);
+
+    return () => {
+      query.removeEventListener("change", updateIsMobile);
+    };
+  }, []);
+
+  return Boolean(reduceMotion || isMobile);
+}
+
 function FadeIn({
   children,
   className = "",
@@ -78,7 +98,7 @@ function FadeIn({
   className?: string;
   delay?: number;
 }) {
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = useLeanMotion();
 
   return (
     <motion.div
@@ -95,20 +115,20 @@ function FadeIn({
 }
 
 export default function ContactPage() {
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = useLeanMotion();
 
   return (
     <>
       <TopBar />
       <Header />
       <main className="overflow-x-hidden">
-        <section className="relative isolate overflow-hidden bg-primary text-white">
+        <section className="contact-hero relative isolate overflow-hidden bg-primary text-white">
           <motion.div
             initial={reduceMotion ? false : "hidden"}
             animate="visible"
             variants={heroMediaVariants}
             transition={{ ...motionTimings.hero, duration: 1 }}
-            className="absolute inset-0 -z-30"
+            className="contact-hero__media absolute inset-0 -z-30"
           >
             <Image
               src="/images/contact-hero.webp"
@@ -116,14 +136,14 @@ export default function ContactPage() {
               fill
               priority
               sizes="100vw"
-              className="object-cover object-center"
+              className="contact-hero__image object-cover object-center"
             />
           </motion.div>
           <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,rgba(6,21,44,0.9)_0%,rgba(6,21,44,0.62)_42%,rgba(6,21,44,0.12)_76%,transparent_100%)]" />
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(3,10,22,0.08),rgba(3,10,22,0.68))]" />
           <HeroBottomDivider />
 
-          <div className="container-width grid min-h-[34rem] items-center pt-24 pb-40">
+          <div className="contact-hero__inner container-width grid min-h-[34rem] items-center pt-24 pb-40">
             <motion.div
               initial={reduceMotion ? false : "hidden"}
               animate="visible"
@@ -314,7 +334,7 @@ export default function ContactPage() {
                 <iframe
                   title="Precision Plastics & Foam map"
                   src="https://www.google.com/maps?q=800%20Marion%20Pugh%20Dr%2C%2077840%2C%20TX%2C%20USA&output=embed"
-                  className="h-full min-h-[330px] w-full border-0 sm:min-h-[350px]"
+                  className="contact-map-frame h-full min-h-[330px] w-full border-0 sm:min-h-[350px]"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
