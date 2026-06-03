@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 const slides = [
   {
     eyebrow: "Plastic Machining",
-    title: "Custom Plastic Machining Services For Precision Industrial Components",
+    title: "Custom Plastic, Carbon Fiber Machining & Foam Insert Solutions for Precision Industrial Components",
     text: "Precision Plastics & Foam delivers custom CNC-machined plastic parts for industrial, aerospace, electronics, tooling, and manufacturing applications with reliable quality and fast turnaround.",
     features: [
       "Fast quote support",
