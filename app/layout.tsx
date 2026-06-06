@@ -16,7 +16,7 @@ const poppins = Poppins({
 });
 
 const siteUrl = "https://www.precisionplasticsandfoam.com";
-const socialSharingImage = `${siteUrl}/social-sharing.jpg`;
+const socialSharingImage = `${siteUrl}/social-sharing-hero.jpg`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
