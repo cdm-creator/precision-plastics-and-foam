@@ -15,8 +15,11 @@ const poppins = Poppins({
   display: "swap"
 });
 
+const siteUrl = "https://www.precisionplasticsandfoam.com";
+const socialSharingImage = `${siteUrl}/social-sharing.jpg`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.precisionplasticsandfoam.com"),
+  metadataBase: new URL(siteUrl),
   title: "Precision Plastics & Foam | Custom Foam Inserts & Plastic Machining",
   description:
     "Premium custom industrial foam inserts and plastic machining services for protective packaging, equipment, tools, electronics, and precision fabrication.",
@@ -37,9 +40,10 @@ export const metadata: Metadata = {
     siteName: "Precision Plastics & Foam",
     images: [
       {
-        url: "/images/hero-industrial-machinery.webp",
+        url: socialSharingImage,
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Precision Plastics & Foam custom plastic machining hero preview"
       }
     ],
@@ -51,7 +55,7 @@ export const metadata: Metadata = {
     title: "Precision Plastics & Foam | Custom Foam Inserts & Plastic Machining",
     description:
       "Premium custom industrial foam inserts and plastic machining services for protective packaging, equipment, tools, electronics, and precision fabrication.",
-    images: ["/images/hero-industrial-machinery.webp"]
+    images: [socialSharingImage]
   }
 };
 
