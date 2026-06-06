@@ -16,7 +16,9 @@ const poppins = Poppins({
 });
 
 const siteUrl = "https://www.precisionplasticsandfoam.com";
-const socialSharingImage = `${siteUrl}/social-sharing-hero.jpg`;
+const socialSharingVersion = "20260606";
+const socialSharingUrl = `${siteUrl}/?v=${socialSharingVersion}`;
+const socialSharingImage = `${siteUrl}/social-sharing-hero.jpg?v=${socialSharingVersion}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
     title: "Precision Plastics & Foam | Custom Foam Inserts & Plastic Machining",
     description:
       "Premium custom industrial foam inserts and plastic machining services for protective packaging, equipment, tools, electronics, and precision fabrication.",
-    url: "/",
+    url: socialSharingUrl,
     siteName: "Precision Plastics & Foam",
     images: [
       {
