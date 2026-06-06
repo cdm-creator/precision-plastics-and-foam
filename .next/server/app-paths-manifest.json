@@ -1,5 +1,4 @@
 {
   "/page": "app/page.js",
-  "/plastic-machining/page": "app/plastic-machining/page.js",
   "/foam-inserts/page": "app/foam-inserts/page.js"
 }
